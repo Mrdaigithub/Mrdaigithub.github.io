@@ -16,56 +16,63 @@
 <body>
 <canvas id="canvas">change your bower</canvas>
 <script>
-//    var box = document.getElementById('canvas');
-//    var bird = box.getContext('2d');
-//    var bg = box.getContext('2d');
-//
-//    function move(x,y,speed,time,conText,pic){
-//        this.x = x; //初始化x值
-//        this.y = y; //初始化y值
-//        this.speed = speed;//速度
+    var box = document.getElementById('canvas');
+    var bird = box.getContext('2d');
+    var bg = box.getContext('2d');
+
+    function move(x,y,speed,time,conText,pic){
+        this.x = x; //初始化x值
+        this.y = y; //初始化y值
+        this.speed = speed;//速度
+        var that = this;
+        move.prototype.animate = function () {
+            conText.clearRect(that.x-10,that.y,pic.width+20,pic.height+10);//脏矩阵清除
+            conText.fillRect(that.x-10,that.y,pic.width+20,pic.height+10);//脏矩阵绘制
+            conText.drawImage(pic,that.x,that.y); //绘制云
+            that.x += that.speed; //x轴移动
+            console.log(pic);
+            setTimeout(that.animate,time);
+        }
+    }
+
+    window.onload = function () {
+        draw();
+        window.onresize = draw;
+
+        function draw() {
+            //绘制黑色背景
+            box.width = document.documentElement.clientWidth * 0.8;
+            box.height = document.documentElement.clientHeight * 0.8;
+            box.style.marginLeft = (document.documentElement.clientWidth - box.width) / 2 + 'px';
+            box.style.marginTop = 20 + 'px';
+            bg.fillRect(0, 0, box.width, box.height);
+
+            var cloud1 = new Image();
+            cloud1.src = 'image/1.png';
+            var cloud2 = new Image();
+            cloud2.src = 'image/2.png';
+            cloud1.onload = cloud2.onload = function () {
+                //绘制云1
+                var c1 = new move(0,0,1,100,bg,cloud1);
+                c1.animate();
+                //绘制云2
+                var c2 = new move(0,100,1,100,bg,cloud2);
+                c2.animate();
+            }
+        }
+    };
+
+    //测试
+//    function a(name){
+//        this.name = name;
 //        var that = this;
-//        move.prototype.animate = function () {
-//            conText.clearRect(that.x-10,that.y,pic.width+20,pic.height+10);//脏矩阵清除
-//            conText.fillRect(that.x-10,that.y,pic.width+20,pic.height+10);//脏矩阵绘制
-//            conText.drawImage(pic,that.x,that.y); //绘制云
-//            that.x += that.speed; //x轴移动
-//            console.log(pic);
-//            setTimeout(that.animate,time);
+//        a.prototype.sayName = function () {
+//            alert(that.name);
+//            setTimeout(a,30);
 //        }
 //    }
+//    var x=new a('xx');
 //
-//    window.onload = function () {
-//        draw();
-//        window.onresize = draw;
-//
-//        function draw() {
-//            box.width = document.documentElement.clientWidth * 0.8;
-//            box.height = document.documentElement.clientHeight * 0.8;
-//            box.style.marginLeft = (document.documentElement.clientWidth - box.width) / 2 + 'px';
-//            box.style.marginTop = 20 + 'px';
-//            bg.fillRect(0, 0, box.width, box.height);
-//            var cloud1 = new Image();
-//            cloud1.src = 'image/1.png';
-//            var cloud2 = new Image();
-//            cloud2.src = 'image/2.png';
-//            cloud1.onload = cloud2.onload = function () {
-//                var c1 = new move(0,0,1,1,bg,cloud1);
-//                c1.animate();
-//                var c2 = new move(0,100,1,1000,bg,cloud2);
-//                c2.animate();
-//            }
-//        }
-//    }
-    a();b();
-    function a(){
-        console.log('haha');
-        setTimeout(a,30);
-    }
-    function b(){
-        console.log('hehe');
-        setTimeout(b,30);
-    }
 </script>
 </body>
 </html>
