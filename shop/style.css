@@ -1,0 +1,89 @@
+.topBg {
+  background-color: #026466;
+  overflow: hidden;
+}
+.topBg .topContainer {
+  padding: 15px 0 8px;
+}
+@media (max-width: 480px) {
+  .topBg .topContainer div, .topBg .topContainer ul {
+    float: none;
+    text-align: center;
+  }
+}
+.topBg .topContainer li {
+  color: #ffffff;
+  margin-top: 3px;
+  display: inline-block;
+}
+.topBg .topContainer li a {
+  color: #ffffff;
+  padding: 0 12px;
+  font-size: 12px;
+  line-height: 40px;
+  transition: 1s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.topBg .topContainer li a:hover {
+  color: #cfdc00;
+}
+@media (max-width: 480px) {
+  .topBg .topContainer li a {
+    font-size: 10px;
+    line-height: 25px;
+  }
+}
+.topBg .topContainer li .rBorder {
+  border-right: 1px solid #ffffff;
+}
+.topBg .topContainer .icon li {
+  margin: 0 5px;
+}
+.topBg .topContainer .icon li .clearPadd {
+  padding: 0;
+}
+.topBg .topContainer .icon li .clearPadd i {
+  width: 27px;
+  height: 27px;
+  display: inline-block;
+  background: url("images/social2.png");
+  transition: 1s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.topBg .topContainer .icon li .clearPadd .fb {
+  background-position: 0 0;
+}
+.topBg .topContainer .icon li .clearPadd .fb:hover {
+  background-position: 0 -35px;
+}
+.topBg .topContainer .icon li .clearPadd .tw {
+  background-position: -40px 0;
+}
+.topBg .topContainer .icon li .clearPadd .tw:hover {
+  background-position: -40px -35px;
+}
+.topBg .topContainer .icon li .clearPadd .db {
+  background-position: -80px 0;
+}
+.topBg .topContainer .icon li .clearPadd .db:hover {
+  background-position: -80px -35px;
+}
+.topBg .topContainer .icon li .clearPadd .goo {
+  background-position: -120px 0;
+}
+.topBg .topContainer .icon li .clearPadd .goo:hover {
+  background-position: -120px -35px;
+}
+@media (max-width: 480px) {
+  .topBg .topContainer .icon {
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
