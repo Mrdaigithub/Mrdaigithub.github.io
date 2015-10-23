@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".menuBtn").hover(function(){$(this).find("div").stop().fadeIn(400)},function(){$(this).find("div").stop().fadeOut(400)});$("#banner")});
