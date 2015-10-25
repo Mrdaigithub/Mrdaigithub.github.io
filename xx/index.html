@@ -2,40 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Document</title>
     <style>
-        @media all and (min-width: 769px) {
-            ul{
-                border: 1px solid #ddd;
-                overflow: hidden;
-            }
-            li{
-                list-style: none;
-                display: inline-block;
-                border: 1px solid red;
-                padding: 5px 10px;
-                border-radius: 3px;
-                text-align: center;
-            }
-            li a{
-                color: #000;
-                text-decoration: none;
-                font-size: 40px;
-                font-weight: 800;
-            }
-            .btn{
-                display: none;
-            }
+        ul{
+            border: 1px solid #ddd;
+            float: left;
+            padding: 10px 50px;
         }
-
-        @media all and (max-width: 768px) {
-            li{
-                display: none;
-            }
-            .btn{
-                display: inline-block;
-                float: right;
-            }
+        li{
+            list-style: none;
+            display: inline-block;
+            border: 1px solid red;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin: 10px;
+            text-align: center;
+        }
+        li a{
+            color: #000;
+            text-decoration: none;
+            font-size: 40px;
+            font-weight: 800;
+        }
+        .btn{
+            float: right;
         }
     </style>
 </head>
