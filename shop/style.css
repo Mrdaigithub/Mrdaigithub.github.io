@@ -592,6 +592,11 @@ footer .about .about-list h3 {
   border-bottom: 1px solid #e5e5e5;
   font-size: 1.125rem;
 }
+@media screen and (max-width: 480px) {
+  footer .about .about-list h3 {
+    font-size: 0.9rem;
+  }
+}
 footer .about .about-list li {
   margin-top: 8px;
 }
@@ -607,6 +612,11 @@ footer .about .about-list li a {
 footer .about .about-list li a:hover {
   color: #000;
   text-decoration: underline;
+}
+@media screen and (max-width: 480px) {
+  footer .about .about-list li a {
+    font-size: 0.75rem;
+  }
 }
 footer .our {
   padding: 32px 0;
@@ -629,6 +639,12 @@ footer .our li {
 footer .our li a {
   color: #999;
   font-size: 0.9375rem;
+}
+@media screen and (max-width: 480px) {
+  footer .our li a {
+    font-size: 0.75rem;
+    line-height: 10px;
+  }
 }
 footer .w3c p {
   line-height: 100px;
