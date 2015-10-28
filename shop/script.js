@@ -15,6 +15,7 @@ $(document).ready(function () {
 
     //焦点轮播图
     var bannerImg = document.getElementById('bannerImg');
+
     //控制容器自适应
     bannerImg.onload = function () {
         var bannerHeight = $('.banner').find('img').get(0).clientHeight;
@@ -23,7 +24,6 @@ $(document).ready(function () {
         var i = 0;
         //pc端
         if(screen.width > 480){
-            alert(screen.width);
             $('.prevBtn').click(function(){
                 i--;
                 if(i < 0){
@@ -61,4 +61,5 @@ $(document).ready(function () {
 
         //移动端优化
     }
+    bannerImg.src = 'images/banner1.jpg';
 });
