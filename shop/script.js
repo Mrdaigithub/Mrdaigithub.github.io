@@ -20,13 +20,12 @@ $(document).ready(function () {
 
     //控制容器自适应
     bannerImg.onload = function () {
-        alert('ok');
         var bannerHeight = $('.banner').find('img').get(0).clientHeight;
         $('.banner').css({'height':bannerHeight});
-
         var i = 0;
-        //pc端
+
         if(!bool){
+            //pc端
             $('.prevBtn').click(function(){
                 i--;
                 if(i < 0){
@@ -56,8 +55,10 @@ $(document).ready(function () {
                     $('.banner img').eq(i).siblings('img').fadeOut(500);
                 }
             },3000)
+        }else{
+            //移动端
+
         }
-        //移动端优化
     };
     bannerImg.src = 'images/banner1.jpg';
 });
