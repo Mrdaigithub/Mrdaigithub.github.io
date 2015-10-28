@@ -12,7 +12,6 @@ $(document).ready(function () {
         $(this).nextAll().children('div').remove(); //无奈之举~
     };
 
-    var i = 0;
     var reg = /Android|iPhone|iPad|system|Windows Phone|SymbianOS|Mobile/g;
     var system = navigator.userAgent;
     var bool = (system.search(reg) == -1)? false : true;
@@ -24,8 +23,8 @@ $(document).ready(function () {
         alert('ok');
         var bannerHeight = $('.banner').find('img').get(0).clientHeight;
         $('.banner').css({'height':bannerHeight});
-        var i = 0;
 
+        var i = 0;
         //pc端
         if(!bool){
             $('.prevBtn').click(function(){
