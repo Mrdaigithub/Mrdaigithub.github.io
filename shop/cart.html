@@ -15,7 +15,7 @@
         <ul class="fl">
             <li><a href="#" class="rBorder">HELP</a></li>
             <li><a href="#" class="rBorder">CONTACT</a></li>
-            <li><a href="login.html">TRACK ORDER</a></li>
+            <li><a href="login.html ">TRACK ORDER</a></li>
         </ul>
         <div class="fr">
             <ul class="fl">
@@ -38,9 +38,9 @@
         </a>
     </div>
     <div class="shopCar fr">
-        <a href="#" class="login fl">LOGIN</a>
+        <a href="account.html" class="login fl">LOGIN</a>
         <div class="shopcar-info fr">
-            <a href="cart.html" class="price">$375.90(2items)</a>
+            <a href="#" class="price">$375.90(2items)</a>
             <a href="#">Empty cart</a>
         </div>
     </div>
@@ -422,38 +422,65 @@
 <div class="w-85">
     <div class="breadcrumbs">
         <a href="index.html">Home</a>
-        <span> / Account</span>
+        <span> / Cart</span>
     </div>
 </div>
-<div class="user w-85">
-    <div class="registerBar fl">
-        <h2>New User? <span>Create An Account</span></h2>
-        <form action="register.php" method="post">
-            <input type="text" placeholder="First name:"/>
-            <input type="text" placeholder="Last name:"/>
-            <input type="email" placeholder="Email address:"/>
-            <input type="text" placeholder="Mobile:"/>
-            <input type="radio" name="radio" checked/><span>Male</span>
-            <input type="radio" name="radio"/><span>Female</span>
-            <input type="password" placeholder="password"/>
-            <input type="password" placeholder="retype password"/>
-            <button type="submit">create an account</button>
-            <p class="agreeBtn">
-                <input type="checkbox" name="checkbox"/>
-                <span>i agree to mobilya.com <a href="javascript:;"> Terms Of Service</a></span>
-            </p>
-        </form>
+<h2 class="shoppingBagListTitle w-85">My Shopping Bag</h2>
+<div class="w-85">
+    <div class="shoppingBagList">
+        <div class="shoppingBag">
+            <img src="images/ts4.jpg" alt="ts4"/>
+            <div class="productsinfo">
+                <h3>
+                    Mast & Harbour
+                    <small>Model No: 3578</small>
+                </h3>
+                <h4 class="productPrice">Rs. $ <span>150.00</span></h4>
+                <p>Qty ::</p>
+                <input type="number" value="1"/>
+                <hr/>
+                <p class="service">Service Charges:: Rs.50.00</p>
+            </div>
+        </div>
+        <div class="productsCloseBtn"></div>
     </div>
-
-    <div class="loginBar fr">
-        <h2>Existing User</h2>
-        <form action="login.php" method="post">
-            <input type="email" placeholder="Email address:"/>
-            <input type="text" placeholder="Mobile:"/>
-            <input type="password" placeholder="password"/>
-            <button type="submit">sign in</button>
-            <p class="forget"><a href="javascript:;">Forgot Your Password</a></p>
-        </form>
+</div>
+<div class="w-85">
+    <div class="shoppingBagList">
+        <div class="shoppingBag">
+            <img src="images/ts1.jpg" alt="ts1"/>
+            <div class="productsinfo">
+                <h3>
+                    Woolen Shrug
+                    <small>Model No: 8768</small>
+                </h3>
+                <h4 class="productPrice">Rs. $ <span>200.00</span></h4>
+                <p>Qty ::</p>
+                <input type="number" value="1"/>
+                <hr/>
+                <p class="service">Service Charges:: Rs.50.00</p>
+            </div>
+        </div>
+        <div class="productsCloseBtn"></div>
+    </div>
+</div>
+<div class="w-85">
+    <div class="cartTotle">
+        <div class="totalBtn"><button href="javascript:;">Continue to basket</button></div>
+        <div class="priceDetails">
+            <h4>Price Details</h4>
+            <p><span>Total</span><span>350.00</span></p>
+            <p><span>Discount</span><span>---</span></p>
+            <p><span>Delivery Charges</span><span>100.00</span></p>
+            <hr/>
+            <p class="totalPrice"><span>TOTAL</span><span>450.00</span></p>
+            <div class="totalBtn"><button href="javascript:;">Place Order</button></div>
+        </div>
+        <div class="options">
+            <h4>OPTIONS</h4>
+            <p class="coupons">COUPONS <a href="javascript:;">Apply Coupons</a></p>
+            <p class="logIn"><a href="javascript:;">Log In </a> to use accounts - linked coupons</p>
+        </div>
     </div>
 </div>
 <footer>
