@@ -1,1 +1,47 @@
-$(document).ready(function(){var d=document.getElementById("bannerImg");var a=navigator.userAgent;var c=/Android|iPhone|iPad|system|Windows Phone|SymbianOS|Mobile/g;var b=(a.search(c)==-1)?false:true;d.onload=function(){var e=$(".banner").find("img").get(0).clientHeight;$(".banner").css({height:e});var f=0;if(!b){$(".prevBtn").click(function(){f--;if(f<0){f=2}$($(".banner").find("img")[f]).fadeIn(500);$(".banner img").eq(f).siblings("img").fadeOut(500)});$(".nextBtn").click(function(){f++;if(f>2){f=0}$($(".banner").find("img")[f]).fadeIn(500);$(".banner img").eq(f).siblings("img").fadeOut(500)});setInterval(function(){f++;if(f!=3){$(".banner img").eq(f).fadeIn(500);$(".banner img").eq(f).siblings("img").fadeOut(500)}else{f=0;$(".banner img").eq(f).fadeIn(500);$(".banner img").eq(f).siblings("img").fadeOut(500)}},3000)}};d.src="images/banner1.jpg"});
+$(document).ready(function(){
+    //焦点轮播图
+    var bannerImg = document.getElementById('bannerImg');
+    var system = navigator.userAgent;
+    var reg = /Android|iPhone|iPad|system|Windows Phone|SymbianOS|Mobile/g;
+    var bool = (system.search(reg) == -1)? false : true;
+//控制容器自适应
+    bannerImg.onload = function () {
+        var bannerHeight = $('.banner').find('img').get(0).clientHeight;
+        $('.banner').css({'height':bannerHeight});
+        var i = 0;
+
+        if(!bool){
+            //pc端
+            $('.prevBtn').click(function(){
+                i--;
+                if(i < 0){
+                    i = 2;
+                }
+                $($('.banner').find('img')[i]).fadeIn(500);
+                $('.banner img').eq(i).siblings('img').fadeOut(500);
+            });
+
+            $('.nextBtn').click(function(){
+                i++;
+                if(i>2){
+                    i = 0;
+                }
+                $($('.banner').find('img')[i]).fadeIn(500);
+                $('.banner img').eq(i).siblings('img').fadeOut(500);
+            });
+
+            setInterval(function () {
+                i++;
+                if(i != 3){
+                    $('.banner img').eq(i).fadeIn(500);
+                    $('.banner img').eq(i).siblings('img').fadeOut(500);
+                }else{
+                    i = 0;
+                    $('.banner img').eq(i).fadeIn(500);
+                    $('.banner img').eq(i).siblings('img').fadeOut(500);
+                }
+            },3000)
+        }
+    };
+    bannerImg.src = 'images/banner1.jpg';
+});
