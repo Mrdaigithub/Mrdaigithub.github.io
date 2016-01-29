@@ -1,0 +1,11 @@
+html, body {
+  background-color: #000;
+  color: #02BF02;
+  font-size: 35px;
+  font-weight: 500;
+  cursor: default; }
+
+#cursor {
+  width: 1rem;
+  border: 1px solid #ccc;
+  background-color: #ccc; }
