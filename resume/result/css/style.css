@@ -1,11 +1,26 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+@-webkit-keyframes animation {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  75% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 html, body {
   background-color: #000;
-  color: #02BF02;
-  font-size: 35px;
-  font-weight: 500;
-  cursor: default; }
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  color: #1CA361; }
 
-#cursor {
-  width: 1rem;
-  border: 1px solid #ccc;
-  background-color: #ccc; }
+.cursor {
+  color: #999;
+  background-color: #999;
+  -webkit-animation: animation infinite 2s; }
