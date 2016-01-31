@@ -14,13 +14,52 @@
   100% {
     opacity: 0; } }
 html, body {
-  background-color: #000;
+  background-color: #292A24;
   font-size: 40px;
   font-weight: 600;
-  line-height: 50px;
-  color: #1CA361; }
+  line-height: 60px;
+  color: #aab2bf; }
 
-.cursor {
-  color: #999;
-  background-color: #999;
-  -webkit-animation: animation infinite 2s; }
+header {
+  background-color: #191a16;
+  height: 2rem;
+  position: relative; }
+  header .title {
+    width: 30%;
+    font-size: 0.8rem;
+    text-indent: 1rem;
+    border-radius: 0.25rem 0.25rem 0 0;
+    line-height: 1.5rem;
+    background-color: #292A24;
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem; }
+
+#text {
+  padding: 1rem;
+  line-height: 2.5rem; }
+  #text .cursor {
+    color: #666;
+    background-color: #666;
+    -webkit-animation: animation infinite 2s; }
+  #text .fontColorGreen {
+    color: #1CA361; }
+
+.btnBox {
+  width: 100%;
+  line-height: 2rem;
+  position: fixed;
+  bottom: 0;
+  background: url("../../img/btnBg.png") repeat-x;
+  background-size: 33px 181px; }
+  .btnBox .enterBtn {
+    width: 40%;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+    margin-left: 30%;
+    border: 5px solid #1CA361;
+    text-align: center;
+    color: #1CA361;
+    cursor: pointer; }
