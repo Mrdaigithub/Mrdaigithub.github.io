@@ -15,10 +15,10 @@
     opacity: 0; } }
 html, body {
   background-color: #292A24;
-  font-size: 40px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 60px;
-  color: #aab2bf; }
+  color: #1CA361; }
 
 header {
   background-color: #191a16;
@@ -26,8 +26,9 @@ header {
   position: relative; }
   header .title {
     width: 30%;
+    color: #aab2bf;
     font-size: 0.8rem;
-    text-indent: 1rem;
+    text-align: center;
     border-radius: 0.25rem 0.25rem 0 0;
     line-height: 1.5rem;
     background-color: #292A24;
@@ -36,21 +37,20 @@ header {
     left: 0.5rem; }
 
 #text {
-  padding: 1rem;
-  line-height: 2.5rem; }
+  height: 600px;
+  overflow: auto;
+  padding: 1rem 1rem 3.5rem 1rem;
+  line-height: 2rem; }
   #text .cursor {
     color: #666;
-    background-color: #666;
     -webkit-animation: animation infinite 2s; }
-  #text .fontColorGreen {
-    color: #1CA361; }
 
 .btnBox {
   width: 100%;
   line-height: 2rem;
   position: fixed;
   bottom: 0;
-  background: url("../../img/btnBg.png") repeat-x;
+  background: url("../../img/btnBg.png") repeat;
   background-size: 33px 181px; }
   .btnBox .enterBtn {
     width: 40%;
@@ -60,6 +60,7 @@ header {
     margin-bottom: 0.4rem;
     margin-left: 30%;
     border: 5px solid #1CA361;
+    border-radius: 3px;
     text-align: center;
     color: #1CA361;
     cursor: pointer; }
