@@ -45,6 +45,18 @@
             return this;
         }
 
+        //滚动条在最下方
+        toBottom(){
+            let scrollTop = this.parentNode.scrollTop,
+                clientHeight = this.parentNode.clientHeight,
+                scrollHeight = this.parentNode.scrollHeight;
+
+            if((clientHeight + scrollTop) < scrollHeight){
+                let diff = scrollHeight - (clientHeight + scrollTop);
+                this.parentNode.scrollTop += diff;
+            }
+        }
+
         print(count){
             let that = this;
             if(count >= this.content.length){
@@ -63,6 +75,7 @@
             }else{
                 this.parentNode.innerHTML += this.content[count];
             }
+            this.toBottom();
             count++;
             setTimeout(function () {
                 that.print(count)
@@ -78,7 +91,7 @@
     let printText = resume(str[0], 30, text);
     printText.start();
 
-    enterBtn.addEventListener('touchstart', function () {
+    enterBtn.addEventListener('touchstart', ()=>{
         //隐藏enter按钮
         btnBox.style.opacity = 0;
         //删除闪烁光标

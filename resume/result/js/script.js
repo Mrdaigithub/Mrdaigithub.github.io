@@ -24,7 +24,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return this;
         }
 
+        //滚动条在最下方
+
         _createClass(Resume, [{
+            key: 'toBottom',
+            value: function toBottom() {
+                var scrollTop = this.parentNode.scrollTop,
+                    clientHeight = this.parentNode.clientHeight,
+                    scrollHeight = this.parentNode.scrollHeight;
+
+                if (clientHeight + scrollTop < scrollHeight) {
+                    var diff = scrollHeight - (clientHeight + scrollTop);
+                    this.parentNode.scrollTop += diff;
+                }
+            }
+        }, {
             key: 'print',
             value: function print(count) {
                 var that = this;
@@ -44,6 +58,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 } else {
                     this.parentNode.innerHTML += this.content[count];
                 }
+                this.toBottom();
                 count++;
                 setTimeout(function () {
                     that.print(count);
