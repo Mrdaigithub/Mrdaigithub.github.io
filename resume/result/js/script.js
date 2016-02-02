@@ -9,22 +9,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var DOC = document;
 
-    var str = '<h1 class="green">hello world!</h1>\\',
-        text = DOC.getElementById('text');
+    var str = [
+    //开机内容
+    '<h3 class="tc">Welcome Mrdai\'s resume</h3>\\' + '<span>Starting auditd:</span>\\<span class="fr"> ] </span>\\<span class="fr green"> ok </span>\\<span class="fr"> [ </span>\\<p></p>\\' + '<span>Starting restorecond:</span>\\<span class="fr"> ] </span>\\<span class="fr green"> ok </span>\\<span class="fr"> [ </span>\\<p></p>\\' + '<span>Starting system logger:</span>\\<span class="fr"> ] </span>\\<span class="fr green"> ok </span>\\<span class="fr"> [ </span>\\<p></p>\\' + '<span>Starting kernel logger:</span>\\<span class="fr"> ] </span>\\<span class="fr green"> ok </span>\\<span class="fr"> [ </span>\\<p></p>\\' + '<span>Starting irqbalance:</span>\\<span class="fr"> ] </span>\\<span class="fr green"> ok </span>\\<span class="fr"> [ </span>\\<p></p>\\' + '<span>Starting mcstransd:</span>\\<span class="fr"> ] </span>\\<span class="fr green"> ok </span>\\<span class="fr"> [ </span>\\<p></p>\\' + '<span>Starting setroubleshootd:</span>\\<span class="fr"> ] </span>\\<span class="fr green"> ok </span>\\<span class="fr"> [ </span>\\<p></p>\\' + '<span>Starting NFS statd:</span>\\<span class="fr"> ] </span>\\<span class="fr green"> ok </span>\\<span class="fr"> [ </span>\\<p></p>\\' + '<span>RPC idmapd:</span>\\<span class="fr"> ] </span>\\<span class="fr green"> ok </span>\\<span class="fr"> [ </span>\\<p></p>\\' + '<span>Determin IP information for eth0...</span>\\',
+
+    //登录界面
+    '<p>Username: Mrdai</p>\\' + '<p>Password: *********</p>\\' + '<p>ACCESS TO SYSTEM</p>\\' + '<p>Initializing...</p>\\' + '<span>press enter to continue</span>\\'],
+        text = DOC.getElementById('text'),
+        btnBox = DOC.getElementsByClassName('btnBox')[0],
+        enterBtn = DOC.getElementsByClassName('enterBtn')[0];
 
     var Resume = function () {
-        function Resume(str, delay, parentNode) {
+        function Resume(str, delay, parentNode, showBtn) {
             _classCallCheck(this, Resume);
 
             this.str = str;
             this.delay = delay;
             this.parentNode = parentNode;
             this.sumReg = /<\w+\s*(\w+=('|")\w+('|")\s*)*>.*<\/\w+>\\/g;
-            this.labelReg = /<\w+\s*(\w+=('|")\w+('|")\s*)*>/;
+            this.labelReg = /<\w+\s*(\w+=('|")\w+\s*\w*('|")\s*)*>/;
             this.contentReg = />.*</;
             this.statements = [];
             this.labels = [];
             this.contents = [];
+            this.showBtn = showBtn || false;
         }
 
         //得到html语句的数组集合
@@ -69,10 +77,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }, {
             key: 'addLabels',
             value: function addLabels() {
+                this.parentNode.innerHTML = '';
                 for (var i = 0; i < this.labels.length; i++) {
                     this.parentNode.innerHTML += this.labels[i];
                 }
                 return this;
+            }
+
+            //添加闪烁的光标在末尾
+
+        }, {
+            key: 'addCursor',
+            value: function addCursor(bool) {
+                if (bool) {
+                    var cursor = DOC.createElement('span');
+                    cursor.innerHTML = ' _';
+                    cursor.className = 'cursor';
+                    this.parentNode.appendChild(cursor);
+                } else {
+                    this.parentNode.removeChild(this.parentNode.children[this.parentNode.children.length - 1]);
+                }
             }
 
             //打印内容
@@ -81,15 +105,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             key: 'printContent',
             value: function printContent(count, contentCount) {
                 var that = this;
-                if (count > this.statements.length) {
-                    return this;
-                }
-                if (contentCount >= this.contents[count].length) {
+                if (contentCount > this.contents[count].length - 1) {
                     contentCount = 0;
                     count++;
                 }
-                console.log(this.parentNode.children[count]);
-                this.parentNode.children[count].innerHTML += this.contents[count][contentCount];
+                if (count >= this.statements.length) {
+                    if (this.showBtn) {
+                        btnBox.style.opacity = 1;
+                    }
+                    this.addCursor(true);
+                    return this;
+                }
+                if (this.contents[count][contentCount] === ' ') {
+                    this.parentNode.children[count].innerHTML += '&nbsp;';
+                } else if (!this.contents[count][contentCount]) ;else {
+                    this.parentNode.children[count].innerHTML += this.contents[count][contentCount];
+                }
                 contentCount++;
                 setTimeout(function () {
                     that.printContent(count, contentCount);
@@ -105,10 +136,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return Resume;
     }();
 
-    var resume = function resume(str, delay, parentNode) {
-        return new Resume(str, delay, parentNode);
+    var resume = function resume(str, delay, parentNode, showBtn) {
+        return new Resume(str, delay, parentNode, showBtn);
     };
 
-    var xx = resume(str, 30, text);
-    xx.start();
+    //显示开机画面
+    var str0 = resume(str[0], 10, text);
+    str0.start();
+
+    //显示登录界面
+    setTimeout(function () {
+        var str1 = resume(str[1], 10, text, true);
+        str1.start();
+    }, 7000);
+
+    enterBtn.addEventListener('touchstart', function () {}, false);
 })(document);

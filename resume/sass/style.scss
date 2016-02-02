@@ -2,6 +2,15 @@
   margin: 0;
   padding: 0;
 }
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.tc{
+  text-align: center;
+}
 @-webkit-keyframes animation {
   0%{
     opacity: 0;
@@ -24,7 +33,7 @@ html,body{
   font-size: 15px;
   font-weight: 600;
   line-height: 60px;
-  color: #222;
+  color: #aab2bf;
 }
 header{
   background-color: #191a16;
