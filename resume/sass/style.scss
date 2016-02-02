@@ -24,7 +24,7 @@ html,body{
   font-size: 15px;
   font-weight: 600;
   line-height: 60px;
-  color: #1CA361;
+  color: #222;
 }
 header{
   background-color: #191a16;
@@ -51,6 +51,9 @@ header{
   .cursor{
     color: #666;
     -webkit-animation: animation infinite 2s;
+  }
+  .green{
+    color: #1CA361;
   }
 }
 .btnBox{
