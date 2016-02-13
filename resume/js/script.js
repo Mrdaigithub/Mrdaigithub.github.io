@@ -55,19 +55,19 @@
             '<p class="tc">  下面是个人作品介绍 ↓</p>\\' +
             '<span> 作品列表 → </span>\\<a href="https://github.com/Mrdaigithub/Mrdaigithub.github.io">this</a>\\' +
             '<p>1. 游戏类网站的ps切图</p>\\' +
-            '<span>  演示地址: </span>\\<a href="http://mrdaigithub.github.io/games/index.html">this</a>\\<div></div>\\' +
+            '<span>  演示地址: </span>\\<a href="https://mrdaigithub.github.io/games/index.html">this</a>\\<div></div>\\' +
             '<span>  查看源码: </span>\\<a href="https://github.com/Mrdaigithub/Mrdaigithub.github.io/tree/master/games">this</a>\\' +
             '<p>2. 购物类网站的ps切图</p>\\' +
-            '<span>  演示地址: </span>\\<a href="http://mrdaigithub.github.io/shop/index.html">this</a>\\<div></div>\\' +
+            '<span>  演示地址: </span>\\<a href="https://mrdaigithub.github.io/shop/index.html">this</a>\\<div></div>\\' +
             '<span>  查看源码: </span>\\<a href="https://github.com/Mrdaigithub/Mrdaigithub.github.io/tree/master/shop">this</a>\\' +
             '<p>3. 个人任务管理系统 (只兼容pc)</p>\\' +
-            '<span>  演示地址: </span>\\<a href="http://mrdaigithub.github.io/task-pc/index.html">this</a>\\<div></div>\\' +
+            '<span>  演示地址: </span>\\<a href="https://mrdaigithub.github.io/task-pc/index.html">this</a>\\<div></div>\\' +
             '<span>  查看源码: </span>\\<a href="https://github.com/Mrdaigithub/dai_daiduIfe/tree/master/dai-baiduife/2015_spring/task/task0004/item-pc">this</a>\\' +
             '<p>4. 微信打飞机游戏</p>\\' +
-            '<span>  演示地址: </span>\\<a href="http://mrdaigithub.github.io/fightPlain/index.html">this</a>\\<div></div>\\' +
+            '<span>  演示地址: </span>\\<a href="https://mrdaigithub.github.io/fightPlain/index.html">this</a>\\<div></div>\\' +
             '<span>  查看源码: </span>\\<a href="https://github.com/Mrdaigithub/Mrdai-games/tree/master/fightPlain">this</a>\\' +
             '<p>5. linux打字机风格的个人简历</p>\\' +
-            '<span>  演示地址: </span>\\<a href="http://github.com/Mrdaigithub/Mrdaigithub.github.io/resume/index.html">this</a>\\<div></div>\\' +
+            '<span>  演示地址: </span>\\<a href="https://mrdaigithub.github.io/resume/index.html">this</a>\\<div></div>\\' +
             '<span>  查看源码: </span>\\<a href="https://github.com/Mrdaigithub/Mrdaigithub.github.io/tree/master/resume">this</a>\\'
         ],
         text = DOC.getElementById('text'),
