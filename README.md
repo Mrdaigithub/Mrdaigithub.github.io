@@ -1,13 +1,14 @@
-# ¸öÈË×÷Æ·µÄÑİÊ¾ÁĞ±í
+# ä¸ªäººä½œå“çš„æ¼”ç¤ºåˆ—è¡¨
+(å»ºè®®æ‰“å¼€wifiï¼Œæˆ–è€…å…³é—­æµè§ˆå™¨çœæµé‡æ¨¡å¼ï¼Œå¦åˆ™ä¼šå‡ºç°æ— æ³•æ˜¾ç¤ºå›¾ç‰‡çš„bug)
 
 
-##ÇĞÍ¼Àà×÷Æ·
-+ [·ÂÓÎÏ·ÍøÕ¾](http://mrdaigithub.github.io/games/index.html)
-+ [·Â¹ºÎïÉÌ³ÇÍøÕ¾](http://mrdaigithub.github.io/shop/index.html)
+##åˆ‡å›¾ç±»ä½œå“
++ [ä»¿æ¸¸æˆç½‘ç«™](http://mrdaigithub.github.io/games/index.html)
++ [ä»¿è´­ç‰©å•†åŸç½‘ç«™](http://mrdaigithub.github.io/shop/index.html)
 
-##HTML5Ó¦ÓÃ
-+ [¸öÈËÈÎÎñ¹ÜÀíÏµÍ³PC°æ](http://mrdaigithub.github.io/task-pc/index.html)
-+ [Î¢ĞÅ´ò·É»úÓÎÏ·](http://mrdaigithub.github.io/fightPlain/index.html)
+##HTML5åº”ç”¨
++ [ä¸ªäººä»»åŠ¡ç®¡ç†ç³»ç»ŸPCç‰ˆ](http://mrdaigithub.github.io/task-pc/index.html)
++ [å¾®ä¿¡æ‰“é£æœºæ¸¸æˆ](http://mrdaigithub.github.io/fightPlain/index.html)
 
-##¼òÀú
-+ [linux´ò×Ö»ú·ç¸ñ¸öÈË¼òÀú](https://mrdaigithub.github.io/resume/index.html)
+##ç®€å†
++ [linuxæ‰“å­—æœºé£æ ¼ä¸ªäººç®€å†](https://mrdaigithub.github.io/resume/index.html)
