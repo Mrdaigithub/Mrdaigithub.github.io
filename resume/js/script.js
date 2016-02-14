@@ -53,6 +53,7 @@
 
             //作品介绍页面
             '<p class="tc">  下面是个人作品介绍 ↓</p>\\' +
+            '<p>(建议打开wifi，或者关闭浏览器省流量模式，否则会出现无法显示图片的bug)</p>\\' +
             '<span> 作品列表 → </span>\\<a href="https://github.com/Mrdaigithub/Mrdaigithub.github.io">this</a>\\' +
             '<p>1. 游戏类网站的ps切图</p>\\' +
             '<span>  演示地址: </span>\\<a href="https://mrdaigithub.github.io/games/index.html">this</a>\\<div></div>\\' +
