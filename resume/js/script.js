@@ -75,6 +75,9 @@
         btnBox = DOC.getElementsByClassName('btnBox')[0],
         enterBtn = DOC.getElementsByClassName('enterBtn')[0];
 
+    console.log(DOC.body.clientHeight);
+    text.style.height = (DOC.body.clientHeight-13-47-58) + 'px';
+
 
     class Resume{
         constructor(str,delay,parentNode,showBtn){
@@ -160,6 +163,7 @@
                 this.parentNode.children[count].innerHTML += this.contents[count][contentCount];
             }
             contentCount++;
+            text.scrollTop = 500;
             setTimeout(() =>{
                 that.printContent(count,contentCount);
             },this.delay);

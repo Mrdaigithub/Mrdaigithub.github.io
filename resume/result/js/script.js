@@ -28,6 +28,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         btnBox = DOC.getElementsByClassName('btnBox')[0],
         enterBtn = DOC.getElementsByClassName('enterBtn')[0];
 
+    console.log(DOC.body.clientHeight);
+    text.style.height = DOC.body.clientHeight - 13 - 47 - 58 + 'px';
+
     var Resume = function () {
         function Resume(str, delay, parentNode, showBtn) {
             _classCallCheck(this, Resume);
@@ -131,6 +134,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     this.parentNode.children[count].innerHTML += this.contents[count][contentCount];
                 }
                 contentCount++;
+                text.scrollTop = 500;
                 setTimeout(function () {
                     that.printContent(count, contentCount);
                 }, this.delay);

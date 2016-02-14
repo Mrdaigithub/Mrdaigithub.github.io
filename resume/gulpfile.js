@@ -28,7 +28,7 @@ gulp.task('mincss', function () {
 });
 //压缩合并js代码
 gulp.task('minjs', function() {
-    return gulp.src('js/*.js')
+    return gulp.src('result/js/*.js')
         .pipe(uglify())
         .pipe(concat('all.min.js'))
         .pipe(gulp.dest('result/min/'));
@@ -72,7 +72,7 @@ gulp.task('watchjs', () => {
 //});
 
 // 静态服务器
-gulp.task('watchSass',  ['sass','watchjs'], function() {
+gulp.task('watchSass',  ['sass','watchjs','mincss','minjs'], function() {
     browserSync.init({
         server: {
             baseDir: "./"
@@ -80,6 +80,8 @@ gulp.task('watchSass',  ['sass','watchjs'], function() {
     });
     gulp.watch("sass/*.scss", ['sass']);
     gulp.watch("js/*.js",['watchjs']);
+    gulp.watch("result/css/*.css",['mincss']);
+    gulp.watch("result/js/*.js",['minjs']);
     gulp.watch("index.html").on('change', reload);
     gulp.watch("result/**/*.*").on('change', reload);
 });
