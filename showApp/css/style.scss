@@ -1,0 +1,63 @@
+html,body{
+  background-color: #1a1a1a;
+  color: #fff;
+}
+.bg{
+  background: url("../img/header-bg.jpg") no-repeat center 0;
+  background-size: cover;
+  min-height: 58rem;
+  .logo{
+    margin-top: 2.5rem;
+  }
+  .title{
+    margin-top: 12.5rem;
+    h1{
+      font-size: 5.83rem;
+      font-weight: 700;
+    }
+    h3{
+      margin-top: 3rem;
+      font-size: 2.5rem;
+      font-weight: 100;
+      font-family: 'EB Garamond', serif;
+    }
+  }
+}
+.about{
+  margin-top: 4rem;
+  p{
+    font-size: (20rem/12);
+    color: #f2f2f2;
+    font-weight: 300;
+    margin: 2rem 0;
+    a{
+      color: #f85c37;
+    }
+  }
+  button{
+    font-size: (14rem/12);
+  }
+}
+.project{
+  margin-top: 4rem;
+  padding-top: 15rem;
+  .carouselFlag{
+    bottom: -2rem;
+  }
+  .carouselImg{
+    img{
+      display: inline;
+    }
+  }
+}
+.contact{
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+  padding-top: 15rem;
+  p{
+    font-size: (20rem/12);
+  }
+  button{
+    font-size: (14rem/12);
+  }
+}
