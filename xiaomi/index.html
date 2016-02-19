@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- 声明文档使用的字符编码 -->
+    <meta charset='utf-8'>
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!-- 页面描述 -->
+    <meta name="description" content="小米手机"/>
+    <!-- 页面关键词 -->
+    <meta name="keywords" content="小米手机"/>
+    <!-- 网页作者 -->
+    <meta name="author" content="na小米me, xiaomi@gmail.com"/>
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow"/>
+
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+    <link rel="stylesheet" href="src/css/reset.scss"/>
+    <link rel="stylesheet" href="complied/css/all.min.css"/>
+    <title>小米官网</title>
+</head>
+<body>
+<div class="container-fluid topBar">
+<div class="container">
+    <div class="fl">
+        <a href="javascript:;">小米网</a>
+        <span class="space">|</span>
+        <a href="javascript:;">MIUI</a>
+        <span class="space">|</span>
+        <a href="javascript:;">米聊</a>
+        <span class="space">|</span>
+        <a href="javascript:;">游戏</a>
+        <span class="space">|</span>
+        <a href="javascript:;">多看阅读</a>
+        <span class="space">|</span>
+        <a href="javascript:;">云服务</a>
+        <span class="space">|</span>
+        <a href="javascript:;">小米网移动版</a>
+        <span class="space">|</span>
+        <a href="javascript:;">问题反馈</a>
+        <span class="space">|</span>
+        <a href="javascript:;">Select Region</a>
+    </div>
+    <div class="fr">
+        <a href="javascript:;">登录</a>
+        <span class="space">|</span>
+        <a href="javascript:;">注册</a>
+        <a href="javascript:;" class="shNavopCar">购物车（0）</a>
+    </div>
+</div>
+</div>
+
+<div class="container header">
+    <img src="img/mi-logo.png" alt="logo" class="logo fl"/>
+    <div class="searchBar fr">
+        <input type="button" class="searchBtn fr"/>
+        <input type="text" class="searchText fr"/>
+    </div>
+    <ul class="productNav">
+        <li class="fr"><a href="javascript:;">社区</a></li>
+        <li class="fr"><a href="javascript:;">服务</a></li>
+        <li class="fr"><a href="javascript:;">智能硬件</a></li>
+        <li class="fr"><a href="javascript:;">路由器</a></li>
+        <li class="fr"><a href="javascript:;">电视 · 盒子</a></li>
+        <li class="fr"><a href="javascript:;">平板</a></li>
+        <li class="fr"><a href="javascript:;">红米</a></li>
+        <li class="fr"><a href="javascript:;">小米手机</a></li>
+    </ul>
+</div>
+
+<div class="container">
+    <!-- example_04 begin -->
+    <h2>示例 4</h2>
+    <span>在上一步基础上，加上左右箭头。</span>
+
+    <style>
+        #b04 { width: 640px;}
+        #b04 .dots { position: absolute; left: 0; right: 0; bottom: 20px;}
+        #b04 .dots li
+        {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 4px;
+            text-indent: -999em;
+            border: 2px solid #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            opacity: .4;
+            -webkit-transition: background .5s, opacity .5s;
+            -moz-transition: background .5s, opacity .5s;
+            transition: background .5s, opacity .5s;
+        }
+        #b04 .dots li.active
+        {
+            background: #fff;
+            opacity: 1;
+        }
+        #b04 .arrow { position: absolute; top: 200px;}
+        #b04 #al { left: 15px;}
+        #b04 #ar { right: 15px;}
+    </style>
+
+    <div class="banner" id="b04">
+        <ul>
+            <li><img src="img/T1bYAvBjJv1RXrhCrK.jpg" alt="banner"></li>
+            <li><img src="img/T1lVh_ByJv1RXrhCrK.jpg" alt="banner"></li>
+            <li><img src="img/T12ZW_BgZv1RXrhCrK.jpg" alt="banner"></li>
+            <li><img src="img/T17QEgBj_T1RXrhCrK.jpg" alt="banner"></li>
+            <li><img src="img/T19nV_BmCv1RXrhCrK.jpg" alt="banner"></li>
+        </ul>
+        <a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="img/arrowl.png" alt="prev" width="20" height="35"></a>
+        <a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="img/arrowr.png" alt="next" width="20" height="37"></a>
+    </div>
+    <!-- example_04 end -->
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="library/unslider/unslider.min.js"></script>
+<script src="complied/js/all.min.js"></script>
+</body>
+</html>
