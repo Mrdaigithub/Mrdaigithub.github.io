@@ -15,7 +15,3 @@
 	[源码查看](https://github.com/Mrdaigithub/dai_daiduIfe/tree/master/dai-baiduife/2015_spring/task/task0004/item-pc)
 + [微信打飞机游戏](http://mrdaigithub.github.io/fightPlain/index.html)
 	[源码查看](https://github.com/Mrdaigithub/Mrdai-games/tree/master/fightPlain)
-
-##简历
-+ [linux打字机风格个人简历](https://mrdaigithub.github.io/resume/index.html)
-	[源码查看](https://github.com/Mrdaigithub/Mrdaigithub.github.io/tree/master/resume)
