@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务一：面向零基础的HTML代码编写</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #DEDEDE;
+        }
+        .textAlineLeft{
+            text-align: left;
+        }
+        .fl{
+            float: left;
+        }
+        .fr{
+            float: right;
+        }
+        .oh{
+            overflow: hidden;
+        }
+        .tr{
+            text-align: right;
+        }
+
+
+        header{
+            background-color: #333333;
+            line-height: 65px;
+        }
+        header h1{
+            width: 150px;
+            text-indent: -9999px;
+            background: url("bdlogo.png")no-repeat left top;
+            background-size: 150px 70px;
+            margin-left: 30px;
+        }
+        header li{
+            margin: 0 15px 0 15px;
+        }
+        header a{
+            color: #fff;
+            text-decoration: none;
+        }
+        header .nav-four{
+            color: #969593;
+        }
+
+        .something{
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border:1px solid #CDCDCD;
+            border-right: 3px solid #9F9F9F;
+            border-bottom: 3px solid #9F9F9F;
+        }
+        .something h2{
+            line-height: 50px;
+        }
+        .something h3{
+            line-height: 30px;
+        }
+        .something address{
+            display: inline-block;
+            font-style: normal;
+        }
+        .something address,.something time{
+            color: #999;
+            font-size: 12px;
+            line-height: 30px;
+        }
+        .something p{
+            margin-top: 15px;
+            line-height: 25px;
+        }
+        .something img{
+            margin: 20px 0 20px 0;
+        }
+        .something ul{
+            text-indent: 30px;
+            list-style: none;
+        }
+        .something li{
+            line-height: 25px;
+        }
+        .something .picBox{
+            overflow: hidden;
+            width: 10%;
+            margin: 20px 0 20px 50px;
+            border:1px solid #ccc;
+            padding:10px;
+        }
+        .something .picBox p{
+            margin: 0;
+        }
+        .something .picBox img{
+            width: 100%;
+            margin: 5px 0 5px 0;
+        }
+        .something ol{
+            margin-left: 50px;
+        }
+        .something table{
+            width: 100%;
+            text-align: left;
+            text-indent: 5px;
+            line-height: 25px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        .something thead{
+            background-color: #333;
+        }
+        .something th{
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+        }
+        .something .sum{
+            background-color: #ccc;
+        }
+
+        .sideBar-title{
+            border-left: 3px solid #ccc;
+            text-indent: 10px;
+            margin-bottom: 10px;
+        }
+        .sideBar-content .inputBar{
+            margin-left: 20%;
+        }
+        .sideBar-content .labels{
+            margin-right: 15px;
+        }
+        .sideBar-content p{
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: #888;
+            line-height: 25px;
+        }
+        .sideBar-content input,.sideBar-content select,.sideBar-content textarea{
+            margin: 8px 0 8px 0;
+        }
+        .sideBar-content .text1{
+            display: inline-block;
+            margin-top: 8px;
+        }
+        .sideBar-content .password1{
+            display: inline-block;
+            margin-top: 53px;
+        }
+        .sideBar-content .password2{
+            display: inline-block;
+            margin-top: 17px;
+        }
+        .sideBar-content .sex{
+            display: inline-block;
+            margin-top: 49px;
+        }
+        .sideBar-content .city{
+            display: inline-block;
+            margin-top: 12px;
+        }
+        .sideBar-content .favorite{
+            display: inline-block;
+            margin-top: 15px;
+        }
+        .sideBar-content .detail{
+            display: inline-block;
+            margin-top: 15px;
+        }
+        .sideBar-content textarea{
+            width: 80%;
+        }
+        .sideBar-content .submitBtn{
+            width: 100%;
+            background-color: #3355D0;
+            border:none;
+            border-radius: 5px;
+            line-height: 40px;
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        footer{
+            background-color: #000;
+            color: #fff;
+            font-size: 12px;
+            line-height: 80px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<header class="oh">
+    <h1 class="fl">网站一级标题</h1>
+    <ul class="fr">
+        <li class="fl"><a href="javascript:;">导航链接一</a></li>
+        <li class="fl"><a href="javascript:;">导航链接二</a></li>
+        <li class="fl"><a href="javascript:;">导航链接三</a></li>
+        <li class="fl"><a href="javascript:;" class="nav-four">导航链接四</a></li>
+    </ul>
+</header>
+
+<article class="something">
+    <h2>文章一级标题</h2>
+    <h3>文章二级标题</h3>
+    <address>文章作者</address>
+    <time>文章发表时间</time>
+    <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+        换行了
+        这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了
+        这是一个很长很长的段落，这是一个很长很长的段落，<a href="javascript:;">这里有个链接链接到http://ife.baidu.com</a>这是一个很长很长的段落，这里有个粗体字这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+    <img src="pic.jpg" alt="pic">
+    <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+        换行了<br>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br>这是一个很长很长的段落，这是一个很长很长的段落，<a href="javascript:;">这里有个链接点击后打开新窗口链接到http://ife.baidu.com</a>这是一个很长很长的段落，这里有个粗体字这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+</article>
+
+<article class="something">
+    <h2>另一篇文章一级标题</h2>
+    <h3>文章二级标题</h3>
+    <address>文章作者</address>
+    <time> 文章发表时间</time>
+    <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+        换行了
+        这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了
+        这是一个很长很长的段落，这是一个很长很长的段落，<a href="javascript:;">这里有个链接链接到http://ife.baidu.com</a>这是一个很长很长的段落，这里有个粗体字这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+    <img src="pic.jpg" alt="pic">
+    <ul class="list-style-none">
+        <li>列表项目一</li>
+        <li>列表项目二</li>
+        <li>列表项目三</li>
+    </ul>
+</article>
+
+<div class="something">
+    <h2>图片</h2>
+    <ul>
+        <li class="picBox">
+            <p>好看的图片</p>
+            <img src="pic.jpg" alt="pic">
+        </li>
+        <li class="picBox">
+            <p>好看的图片</p>
+            <img src="pic.jpg" alt="pic">
+        </li>
+        <li class="picBox">
+            <p>好看的图片</p>
+            <img src="pic.jpg" alt="pic">
+        </li>
+        <li class="picBox">
+            <p>好看的图片</p>
+            <img src="pic.jpg" alt="pic">
+        </li>
+        <li class="picBox">
+            <p>好看的图片</p>
+            <img src="pic.jpg" alt="pic">
+        </li>
+        <li class="picBox">
+            <p>好看的图片</p>
+            <img src="pic.jpg" alt="pic">
+        </li>
+        <li class="picBox">
+            <p>好看的图片</p>
+            <img src="pic.jpg" alt="pic">
+        </li>
+        <li class="picBox">
+            <p>好看的图片</p>
+            <img src="pic.jpg" alt="pic">
+        </li>
+        <li class="picBox">
+            <p>好看的图片</p>
+            <img src="pic.jpg" alt="pic">
+        </li>
+        <li class="picBox">
+            <p>好看的图片</p>
+            <img src="pic.jpg" alt="pic">
+        </li>
+    </ul>
+</div>
+
+<div class="something">
+    <h2>最后一篇文章的一级标题</h2>
+    <h3>文章的二级标题</h3>
+    <address>文章作者</address>
+    <time> 文章发表时间</time>
+    <ol>
+        <li>排名1</li>
+        <li>排名2</li>
+        <li>排名3</li>
+    </ol>
+
+
+    <p>下面是一个表格，我这里给表格加了一个border=“1”好让你看出是一个表格，你们写html时候不用加</p>
+    <table cellspacing="0">
+        <thead>
+        <tr>
+            <th class="textAlineLeft">表头</th>
+            <th class="textAlineLeft">表头</th>
+            <th class="textAlineLeft">表头</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th class="textAlineLeft">表内容单元格</th>
+            <th class="textAlineLeft">表内容单元格</th>
+            <th class="textAlineLeft"><a href="javascript:;">操作</a></th>
+        </tr>
+        <tr>
+            <th class="textAlineLeft">表内容单元格</th>
+            <th class="textAlineLeft">表内容单元格</th>
+            <th class="textAlineLeft"><a href="javascript:;">操作</a></th>
+        </tr>
+        <tr>
+            <th class="textAlineLeft">表内容单元格</th>
+            <th class="textAlineLeft">表内容单元格</th>
+            <th class="textAlineLeft"><a href="javascript:;">操作</a></th>
+        </tr>
+        <tr>
+            <th class="textAlineLeft">表内容单元格</th>
+            <th class="textAlineLeft">表内容单元格</th>
+            <th class="textAlineLeft"><a href="javascript:;">操作</a></th>
+        </tr>
+        <tr class="sum">
+            <th class="textAlineLeft">总计</th>
+            <th class="textAlineLeft" colspan="2">1000</th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="something oh">
+    <h2 class="sideBar-title">这里以后是一个侧栏，这是侧栏的标题</h2>
+    <form class="sideBar-content oh">
+        <div class="inputBar">
+            <div class="fl tr labels">
+                <label for="text1" class="text1">请输入邮箱地址</label><br>
+                <label for="text2" class="password1">请输入密码</label><br>
+                <label for="text3" class="password2">请重复输入密码</label><br>
+                <label class="sex">性别</label><br>
+                <label for="city" class="city">城市</label><br>
+                <label class="favorite">爱好</label><br>
+                <label for="detail" class="detail">个人描述</label>
+            </div>
+            <div class="fl">
+                <input type="text" id="text1" placeholder="这是一个文本输入框">
+                <p>邮箱地址请按要求格式输入</p>
+                <input type="password" id="text2" placeholder="这是一个文本输入框"><br>
+                <input type="password" id="text3" placeholder="这是一个文本输入框">
+                <p>密码请为6-16位英文数字</p>
+                <input type="radio" id="man" name="sex" checked value="男">
+                <label for="man">男</label>
+                <input type="radio" id="woman" name="sex" value="女">
+                <label for="woman">女</label><br>
+                <select id="city">
+                    <option value="北京">北京</option>
+                    <option value="上海">上海</option>
+                    <option value="杭州">杭州</option>
+                    <option value="深圳">深圳</option>
+                </select><br>
+                <input type="checkbox" id="sport" value="运动"><label for="sport">运动</label>
+                <input type="checkbox" id="art" value="艺术"><label for="art">运动</label>
+                <input type="checkbox" id="science" value="科学"><label for="science">运动</label><br>
+                <textarea id="detail" cols="100" rows="10" placeholder="这是一个多行输入框，输入你的描述"></textarea>
+            </div>
+        </div>
+        <input type="submit" class="submitBtn" value="确认提交">
+    </form>
+</div>
+
+<footer>版权所有&copy;</footer>
+</body>
+</html>
