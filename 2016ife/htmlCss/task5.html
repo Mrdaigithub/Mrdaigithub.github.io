@@ -57,6 +57,7 @@
             border:1px solid #CDCDCD;
             border-right: 3px solid #9F9F9F;
             border-bottom: 3px solid #9F9F9F;
+            overflow: hidden;
         }
         .something h2{
             line-height: 50px;
@@ -81,20 +82,23 @@
             margin: 20px 0 20px 0;
         }
         .something ul{
-            text-indent: 30px;
             list-style: none;
         }
         .something li{
             line-height: 25px;
         }
         .something .picBox{
+            display: inline-block;
             overflow: hidden;
             width: 10%;
-            margin: 20px 0 20px 50px;
+            margin: 20px;
             border:1px solid #ccc;
             padding:10px;
         }
         .something .picBox p{
+            font-size: 13px;
+            line-height: 20px;
+            text-indent: 0px;
             margin: 0;
         }
         .something .picBox img{
@@ -129,7 +133,8 @@
             margin-bottom: 10px;
         }
         .sideBar-content .inputBar{
-            margin-left: 20%;
+            overflow: hidden;
+            margin-left: 4%;
         }
         .sideBar-content .labels{
             margin-right: 15px;
@@ -173,7 +178,8 @@
             margin-top: 15px;
         }
         .sideBar-content textarea{
-            width: 80%;
+            width: 100%;
+            height: 80px;
         }
         .sideBar-content .submitBtn{
             width: 100%;
@@ -196,13 +202,21 @@
         }
 
         .content{
+            position: relative;
             overflow: hidden;
         }
         .left{
-            float: left;
+            margin-right: 500px;
+        }
+        .left>.something{
+            width:90%;
         }
         .right{
+            width: 430px;
             float: right;
+            position: absolute;
+            top:0;
+            right:0;
         }
     </style>
 </head>
@@ -348,7 +362,7 @@
         </div>
     </div>
 
-    <div class="something oh right">
+    <div class="something right">
         <h2 class="sideBar-title">这里以后是一个侧栏，这是侧栏的标题</h2>
         <form class="sideBar-content oh">
             <div class="inputBar">
@@ -380,7 +394,7 @@
                     <input type="checkbox" id="sport" value="运动"><label for="sport">运动</label>
                     <input type="checkbox" id="art" value="艺术"><label for="art">运动</label>
                     <input type="checkbox" id="science" value="科学"><label for="science">运动</label><br>
-                    <textarea id="detail" cols="100" rows="10" placeholder="这是一个多行输入框，输入你的描述"></textarea>
+                    <textarea id="detail" placeholder="这是一个多行输入框，输入你的描述"></textarea>
                 </div>
             </div>
             <input type="submit" class="submitBtn" value="确认提交">

@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-size: 12px;
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+  line-height: 1.5; }
+
+.container {
+  width: 890px;
+  margin: 0 auto; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.clear-float {
+  clear: both; }
+
+.main {
+  width: 980px;
+  height: 1386px;
+  margin: 0 auto;
+  overflow: hidden; }
+
+header {
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 2px solid #938e8c; }
+  header small {
+    width: 110px;
+    height: 61px;
+    background-color: #DB3E75;
+    float: left; }
+    header small p {
+      font-family: "SimHei";
+      font-size: 12px;
+      color: #fff;
+      position: absolute;
+      bottom: 5px;
+      left: 3px; }
+  header time {
+    font-family: "SimHei";
+    font-size: 12px;
+    position: absolute;
+    right: 3px;
+    bottom: 5px;
+    color: #d45d5c; }
+
+.content {
+  margin: 34px auto; }
+  .content .banner .pic-box {
+    width: 641px;
+    height: 301px;
+    position: relative;
+    float: left; }
+    .content .banner .pic-box img {
+      width: 100%; }
+    .content .banner .pic-box .green-mask, .content .banner .pic-box .red-mask {
+      position: absolute;
+      top: 0;
+      width: 191px;
+      height: 301px; }
+    .content .banner .pic-box .green-mask {
+      left: 0;
+      background-color: rgba(0, 128, 0, 0.3); }
+    .content .banner .pic-box .red-mask {
+      right: 0;
+      background-color: rgba(255, 0, 0, 0.3); }
+  .content .banner .about-box {
+    float: right;
+    border-top: 2px solid #cc809c;
+    width: 203px; }
+    .content .banner .about-box h2 {
+      text-transform: capitalize;
+      font-size: 24px;
+      color: #000;
+      text-decoration: underline;
+      line-height: 40px; }
+    .content .banner .about-box p {
+      font-size: 12px;
+      color: #676767;
+      font-family: "KaiTi_GB2312";
+      line-height: 10px; }
+    .content .banner .about-box i {
+      font-size: 116px;
+      line-height: 132px;
+      color: #75b86b; }
+    .content .banner .about-box .css {
+      color: #cc8091; }
+      .content .banner .about-box .css span {
+        font-size: 55px; }
+      .content .banner .about-box .css div {
+        display: inline-block;
+        font-size: 12px;
+        line-height: 10px; }
+        .content .banner .about-box .css div .small-css {
+          font-size: 21px; }
+  .content .what-when-how {
+    width: 641px;
+    text-align: center; }
+    .content .what-when-how .what, .content .what-when-how .when, .content .what-when-how .how {
+      width: 30%;
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    .content .what-when-how .what > h3, .content .what-when-how .when > h3, .content .what-when-how .how > h3 {
+      font-size: 16px;
+      font-weight: bolder;
+      text-decoration: underline; }
+    .content .what-when-how .what > p, .content .what-when-how .when > p, .content .what-when-how .how > p {
+      font-size: 12px;
+      color: #767777;
+      font-family: "SimSun";
+      line-height: 16px; }
+    .content .what-when-how .what h3 {
+      color: #418c59; }
+    .content .what-when-how .when h3 {
+      color: #d2994f; }
+    .content .what-when-how .how h3 {
+      color: #cc7680; }
+    .content .what-when-how .how > div {
+      margin-top: 40px; }
+      .content .what-when-how .how > div div {
+        font-size: 12px;
+        color: #cd4a48;
+        font-style: italic;
+        line-height: 16px; }
+        .content .what-when-how .how > div div span {
+          font-style: normal;
+          color: #231815;
+          line-height: 16px; }
