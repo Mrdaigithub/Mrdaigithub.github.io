@@ -20,7 +20,7 @@ html, body {
 .clear-float {
   clear: both; }
 
-.main {
+main {
   width: 980px;
   height: 1386px;
   margin: 0 auto;
@@ -53,52 +53,55 @@ header {
 
 .content {
   margin: 34px auto; }
-  .content .banner .pic-box {
+  .content .title-pic .pic-box {
     width: 641px;
     height: 301px;
     position: relative;
     float: left; }
-    .content .banner .pic-box img {
+    .content .title-pic .pic-box img {
       width: 100%; }
-    .content .banner .pic-box .green-mask, .content .banner .pic-box .red-mask {
+    .content .title-pic .pic-box .green-mask, .content .title-pic .pic-box .red-mask {
       position: absolute;
       top: 0;
       width: 191px;
       height: 301px; }
-    .content .banner .pic-box .green-mask {
+    .content .title-pic .pic-box .green-mask {
       left: 0;
       background-color: rgba(0, 128, 0, 0.3); }
-    .content .banner .pic-box .red-mask {
+    .content .title-pic .pic-box .red-mask {
       right: 0;
       background-color: rgba(255, 0, 0, 0.3); }
-  .content .banner .about-box {
+  .content .title-pic .about-box {
     float: right;
     border-top: 2px solid #cc809c;
     width: 203px; }
-    .content .banner .about-box h2 {
+    .content .title-pic .about-box h2 {
+      font-weight: 500;
       text-transform: capitalize;
       font-size: 24px;
       color: #000;
       text-decoration: underline;
       line-height: 40px; }
-    .content .banner .about-box p {
+      .content .title-pic .about-box h2 span {
+        font-size: 28px; }
+    .content .title-pic .about-box p {
       font-size: 12px;
       color: #676767;
       font-family: "KaiTi_GB2312";
       line-height: 10px; }
-    .content .banner .about-box i {
+    .content .title-pic .about-box i {
       font-size: 116px;
       line-height: 132px;
       color: #75b86b; }
-    .content .banner .about-box .css {
+    .content .title-pic .about-box .css {
       color: #cc8091; }
-      .content .banner .about-box .css span {
+      .content .title-pic .about-box .css span {
         font-size: 55px; }
-      .content .banner .about-box .css div {
+      .content .title-pic .about-box .css div {
         display: inline-block;
         font-size: 12px;
         line-height: 10px; }
-        .content .banner .about-box .css div .small-css {
+        .content .title-pic .about-box .css div .small-css {
           font-size: 21px; }
   .content .what-when-how {
     width: 641px;
@@ -134,3 +137,154 @@ header {
           font-style: normal;
           color: #231815;
           line-height: 16px; }
+  .content .article-bottom {
+    margin-top: 50px;
+    overflow: hidden; }
+    .content .article-bottom .index-first {
+      float: left;
+      padding-left: 45px;
+      margin-bottom: 20px; }
+      .content .article-bottom .index-first li {
+        padding-top: 30px; }
+    .content .article-bottom .index-last {
+      list-style: none;
+      float: right;
+      text-align: right;
+      margin-bottom: 20px;
+      margin-right: 20px;
+      font-size: 12px;
+      color: #5a5b5b;
+      font-family: SimSun;
+      font-style: italic; }
+      .content .article-bottom .index-last li {
+        padding-top: 30px; }
+    .content .article-bottom .fl {
+      width: 400px; }
+      .content .article-bottom .fl h2 {
+        font-size: 42px;
+        color: #11456b;
+        font-weight: bolder;
+        font-family: SimHei;
+        border-bottom: 2px solid #11456b; }
+        .content .article-bottom .fl h2 strong {
+          font-size: 72px;
+          color: #f5e327;
+          font-style: italic; }
+        .content .article-bottom .fl h2 span {
+          font-size: 33px;
+          color: #11456b; }
+      .content .article-bottom .fl p {
+        font-size: 12px;
+        font-family: SimSun;
+        color: #767777;
+        line-height: 16px;
+        padding-top: 20px; }
+        .content .article-bottom .fl p strong {
+          font-size: 70px;
+          color: #f5e327;
+          float: left;
+          font-family: "Microsoft YaHei";
+          font-weight: 500;
+          line-height: 70px;
+          padding: 0 5px 5px 0; }
+        .content .article-bottom .fl p img {
+          float: right;
+          padding: 10px 0 10px 10px; }
+    .content .article-bottom .fr {
+      width: 458px;
+      margin-top: 30px; }
+      .content .article-bottom .fr .pic-box {
+        position: relative;
+        height: 275px; }
+        .content .article-bottom .fr .pic-box img {
+          width: 100%;
+          height: 275px; }
+        .content .article-bottom .fr .pic-box .mask {
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 60px;
+          background-color: rgba(0, 0, 0, 0.5); }
+          .content .article-bottom .fr .pic-box .mask h4 {
+            font-size: 26px;
+            color: #fff;
+            line-height: 44px;
+            display: inline-block;
+            padding-left: 15px;
+            margin-left: 15px;
+            border-left: 3px solid #72b16a;
+            margin-top: 8px;
+            font-weight: 500; }
+          .content .article-bottom .fr .pic-box .mask span {
+            font-size: 12px;
+            color: #72b16a;
+            letter-spacing: 1px;
+            font-style: italic;
+            position: relative;
+            top: 6px; }
+      .content .article-bottom .fr .right-bottom {
+        overflow: hidden;
+        background-color: #EAF1CF; }
+        .content .article-bottom .fr .right-bottom ul li {
+          font-size: 16px;
+          color: #5a5b5b;
+          line-height: 20px;
+          font-family: SimSun; }
+        .content .article-bottom .fr .right-bottom .redBox {
+          width: 260px;
+          height: 160px;
+          background-color: #d45d5c;
+          float: left;
+          overflow: hidden; }
+          .content .article-bottom .fr .right-bottom .redBox strong {
+            float: left;
+            font-size: 110px;
+            color: #FFFFFF;
+            font-weight: 500;
+            text-indent: 7px; }
+          .content .article-bottom .fr .right-bottom .redBox div {
+            float: left;
+            font-family: SimHei;
+            height: 86px;
+            border-left: 2px solid #FFFFFF;
+            padding-left: 6px;
+            margin-left: 6px;
+            margin-top: 42px; }
+            .content .article-bottom .fr .right-bottom .redBox div p {
+              font-size: 21px;
+              color: #FFFFFF;
+              font-style: italic;
+              line-height: 24px; }
+            .content .article-bottom .fr .right-bottom .redBox div span {
+              font-size: 12px;
+              color: #FFFFFF;
+              line-height: 6px; }
+        .content .article-bottom .fr .right-bottom .text {
+          font-family: SimHei;
+          font-size: 14px;
+          color: #5a5b5b;
+          line-height: 16px;
+          font-style: italic;
+          float: right;
+          width: 168px;
+          padding: 15px 15px 0 15px;
+          text-indent: 86px; }
+          .content .article-bottom .fr .right-bottom .text strong {
+            font-size: 72px;
+            color: #d45d5c;
+            display: inline-block;
+            position: relative; }
+          .content .article-bottom .fr .right-bottom .text .first {
+            top: -49px;
+            left: -138px; }
+          .content .article-bottom .fr .right-bottom .text .last {
+            bottom: 22px;
+            right: -23px; }
+
+footer {
+  font-size: 12px;
+  color: #d45d5c;
+  font-family: SimHei;
+  text-align: right;
+  border-top: 1px solid #938e8c; }
