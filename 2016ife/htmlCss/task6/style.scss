@@ -59,7 +59,7 @@ header{
 }
 
 .content{
-  margin: 34px auto;
+  margin: 20px auto;
   .title-pic{
     .pic-box{
       width: 641px;
@@ -173,7 +173,6 @@ header{
             font-style: normal;
             color: #231815;
             line-height: 16px;
-            background: #000;
           }
         }
       }
@@ -184,12 +183,15 @@ header{
     margin-top:50px;
     overflow: hidden;
     ul{
-
+      list-style: none;
+      li{
+        overflow: hidden;
+      }
     }
     .index-first{
       float: left;
       padding-left: 45px;
-      margin-bottom: 20px;
+      line-height: 40px;
       li{
         padding-top: 30px;
       }
@@ -198,9 +200,9 @@ header{
       list-style: none;
       float: right;
       text-align: right;
-      margin-bottom: 20px;
       margin-right: 20px;
       font-size: 12px;
+      line-height: 40px;
       color: #5a5b5b;
       font-family: SimSun;
       font-style: italic;
@@ -340,6 +342,7 @@ header{
           width: 168px;
           padding:15px 15px 0 15px;
           text-indent: 86px;
+          position: relative;
           strong{
             font-size: 72px;
             color: #d45d5c;
@@ -347,12 +350,14 @@ header{
             position: relative;
           }
           .first{
-            top: -49px;
-            left:-138px;
+            top: 29px;
+            left:-125px;
+            position: absolute;
           }
           .last{
-            bottom:22px;
-            right:-23px;
+            position: absolute;
+            bottom:-32px;
+            right:0;
           }
         }
       }

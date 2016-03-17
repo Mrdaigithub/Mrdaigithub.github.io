@@ -1,6 +1,6 @@
 //sass,js默认在source文件夹下
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass');
+    sass = require('gulp-sass');
     //babel = require('gulp-babel'),
     //browserSync = require('browser-sync').create(),
     //reload      = browserSync.reload,
@@ -34,10 +34,9 @@ var gulp = require('gulp'),
 //});
 //sass转css
 gulp.task('sass', function () {
-    return sass('./style.scss')
-        .on('error', sass.logError)
-        .pipe(gulp.dest('./'));
-        //.pipe(reload({stream: true}));
+    return gulp.src('style.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./css/'));
 });
 //js代码模块化,babel转化
 //gulp.task('babel', function () {
@@ -65,7 +64,7 @@ gulp.task('watchSass',  ['sass'], function() {
     //        baseDir: "./item-pc"
     //    }
     //});
-    gulp.watch("style.scss", ['sass']);
+    gulp.watch("*.scss", ['sass']);
     //gulp.watch("item-pc/index.html").on('change', reload);
     //gulp.watch("item-pc/result/*.*").on('change', reload);
 });
