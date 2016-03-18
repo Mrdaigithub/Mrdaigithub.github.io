@@ -1,0 +1,449 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font: 14px "Microsoft YaHei",SimHei,Arial,sans-serif;
+  min-width: 1280px; }
+
+ul, li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+input {
+  border: none;
+  outline: none; }
+
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden; }
+
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+.clearfix {
+  clear: both; }
+
+.overflow-hidden {
+  overflow: hidden; }
+
+.center-block {
+  margin: 0 auto; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+header .logo {
+  margin-left: 59px;
+  font: 21px/56px SimHei;
+  padding-left: 42px;
+  background: url("../img/task_1_7_1_03.png") no-repeat left center; }
+
+header li {
+  float: left;
+  padding: 17px 16px;
+  margin: 0 6px; }
+  header li a {
+    color: #787b83; }
+  header li:first-child {
+    border-bottom: 5px solid #e74f4d; }
+    header li:first-child a {
+      color: #e74f4d; }
+  header li:last-child {
+    margin-right: 22px; }
+    header li:last-child a {
+      color: #e74f4d; }
+      header li:last-child a:after {
+        content: url("../img/task_1_7_1_63.png");
+        float: left;
+        margin-right: 5px; }
+
+main .banner {
+  position: relative; }
+  main .banner img {
+    height: 747px; }
+  main .banner .start {
+    position: absolute;
+    top: 228px;
+    left: 117px; }
+    main .banner .start h2 {
+      font-size: 60px;
+      color: #FFFFFF; }
+    main .banner .start p {
+      font-size: 21px;
+      color: #FFFFFF;
+      margin: 15px 0 63px 0; }
+    main .banner .start a {
+      font-size: 30px;
+      color: #FFFFFF;
+      padding: 16px 101px 13px 99px;
+      background-color: #e74f4d; }
+
+main .feature {
+  padding: 44px 71px 65px 88px;
+  text-align: center; }
+  main .feature li {
+    width: 24%;
+    display: inline-block;
+    text-align: center;
+    position: relative; }
+    main .feature li:after {
+      position: absolute; }
+    main .feature li p {
+      padding: 88px 78px 20px 92px; }
+  main .feature li:nth-child(1):after {
+    content: url("../img/task_1_7_1_98.png");
+    position: absolute;
+    top: 0;
+    margin-left: -21px; }
+  main .feature li:nth-child(2):after {
+    content: url("../img/task_1_7_1_105.png");
+    position: absolute;
+    top: 0;
+    margin-left: -21px; }
+  main .feature li:nth-child(3):after {
+    content: url("../img/task_1_7_1_119.png");
+    position: absolute;
+    top: 0;
+    margin-left: -21px; }
+  main .feature li:nth-child(4):after {
+    content: url("../img/task_1_7_1_123.png");
+    position: absolute;
+    top: 0;
+    margin-left: -21px; }
+
+main .question {
+  background-color: #edecec;
+  padding: 89px 0 78px 0; }
+  main .question h2 {
+    font-family: SimHei;
+    font-size: 54px;
+    color: #a1a1a1; }
+  main .question img {
+    margin-bottom: 47px; }
+
+main .find-city {
+  background: url("../img/task_1_7_1_02.png") no-repeat center;
+  background-size: 100%;
+  padding: 52px 0 132px 0; }
+  main .find-city h3 {
+    font-weight: 500;
+    font-size: 21px;
+    color: #FFFFFF; }
+  main .find-city div {
+    width: 30px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 8px auto 20px auto; }
+  main .find-city p {
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-bottom: 51px; }
+  main .find-city form > ul > li {
+    display: inline-block;
+    margin: 0 14px;
+    position: relative; }
+    main .find-city form > ul > li input {
+      height: 35px;
+      width: 236px;
+      background: url("../img/task_1_7_1_221.png") no-repeat 209px center;
+      padding-left: 12px;
+      background-color: #FFFFFF;
+      border: 1px solid #FFFFFF; }
+      main .find-city form > ul > li input:focus {
+        border: 1px solid #bf4f48; }
+    main .find-city form > ul > li ul {
+      width: 248px;
+      background-color: #e3e2e4;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      border: 1px solid #bf4f48; }
+      main .find-city form > ul > li ul li {
+        text-align: left;
+        text-indent: 30px;
+        line-height: 26px;
+        color: #787879;
+        cursor: pointer; }
+        main .find-city form > ul > li ul li:hover {
+          color: #FFFFFF;
+          background: url("../img/task_1_7_1_4.png") no-repeat 10px center;
+          background-color: #bf4f48; }
+  main .find-city form > ul li:last-child input {
+    text-align: center;
+    border: none;
+    color: #FFFFFF;
+    letter-spacing: 20px;
+    background: none;
+    background-color: #bf4f48;
+    font-weight: 700;
+    cursor: pointer; }
+
+main .show-pic {
+  background-color: #f7f7f7;
+  padding: 100px 0 114px 0; }
+  main .show-pic li {
+    display: inline-block;
+    margin: 0 13px;
+    vertical-align: top; }
+    main .show-pic li h4 {
+      font-weight: 500;
+      line-height: 26px; }
+    main .show-pic li p {
+      font-size: 12px;
+      color: #9f9f9f;
+      line-height: 20px; }
+    main .show-pic li div {
+      padding: 12px 8px;
+      border: 1px solid #e2e2e1;
+      border-bottom: none;
+      background-color: #FFFFFF; }
+      main .show-pic li div img {
+        height: 311px; }
+  main .show-pic li:nth-child(2) h4 {
+    font-size: 21px;
+    letter-spacing: 20px;
+    line-height: 28px; }
+
+main .more .top-section {
+  overflow: hidden; }
+  main .more .top-section .timeTitle {
+    color: #FFFFFF;
+    width: 66.66%;
+    background: url("../img/task_1_7_2_04.png") no-repeat center;
+    background-size: 100% 100%;
+    padding: 130px 0 150px 0;
+    position: relative; }
+    main .more .top-section .timeTitle:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      border-right: 24px solid #FFFFFF;
+      position: absolute;
+      top: 50%;
+      margin-top: -14px;
+      right: 0px; }
+    main .more .top-section .timeTitle span {
+      font-size: 50px; }
+    main .more .top-section .timeTitle h2 {
+      font-size: 158px;
+      font-weight: bold; }
+    main .more .top-section .timeTitle address, main .more .top-section .timeTitle time {
+      font-size: 22px; }
+  main .more .top-section div:nth-child(2) {
+    margin-left: 66.66%;
+    padding: 0 64px 0 70px;
+    margin-top: 180px; }
+    main .more .top-section div:nth-child(2) h3 {
+      font-size: 20px; }
+      main .more .top-section div:nth-child(2) h3:after {
+        content: '01';
+        color: #e74f4d; }
+    main .more .top-section div:nth-child(2) p {
+      color: #aaaaaa;
+      font-size: 12px;
+      line-height: 30px; }
+    main .more .top-section div:nth-child(2) > a {
+      margin-top: 33px;
+      color: #e25c60;
+      border: 1px solid #e25c60;
+      width: 103px;
+      display: inline-block;
+      padding: 10px 0 10px; }
+    main .more .top-section div:nth-child(2) .check-btn {
+      height: 12px; }
+      main .more .top-section div:nth-child(2) .check-btn a {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 6px;
+        border: 1px solid #929293;
+        margin: 24px 7px 0 7px; }
+        main .more .top-section div:nth-child(2) .check-btn a:first-child {
+          background-color: #929293; }
+
+main .more .bottom-section {
+  position: relative;
+  overflow: hidden;
+  font-family: SimHei;
+  font-size: 21px; }
+  main .more .bottom-section > div {
+    width: 33.33%;
+    position: absolute;
+    top: 0;
+    bottom: 0; }
+    main .more .bottom-section > div p {
+      line-height: 30px; }
+    main .more .bottom-section > div p:first-child {
+      margin-top: 200px; }
+    main .more .bottom-section > div > div {
+      width: 30px;
+      height: 2px;
+      background-color: #FFFFFF;
+      margin: 25px auto 25px auto; }
+    main .more .bottom-section > div a {
+      display: inline-block;
+      width: 167px;
+      padding: 10px 0; }
+  main .more .bottom-section div:nth-child(1) {
+    color: #FFFFFF;
+    background-color: #e74f4d; }
+    main .more .bottom-section div:nth-child(1) a {
+      color: #FFFFFF;
+      border: 1px solid #FFFFFF; }
+  main .more .bottom-section div:nth-child(2) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 33.33%; }
+    main .more .bottom-section div:nth-child(2) > div {
+      background-color: #ababaa; }
+    main .more .bottom-section div:nth-child(2) a {
+      color: #e74f4d;
+      border: 1px solid #e74f4d; }
+  main .more .bottom-section div:last-child {
+    position: relative; }
+    main .more .bottom-section div:last-child:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -14px;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      border-left: 24px solid #FFFFFF; }
+
+main .join-us .top-section {
+  padding-top: 120px; }
+  main .join-us .top-section h2 {
+    font-size: 21px;
+    font-family: SimHei; }
+  main .join-us .top-section div {
+    width: 31px;
+    height: 2px;
+    background-color: #e74f4d;
+    margin: 8px auto 15px auto; }
+  main .join-us .top-section p {
+    font-size: 12px;
+    color: #aaaaaa; }
+
+main .join-us .bottom-section {
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 106px; }
+  main .join-us .bottom-section .pull-left {
+    width: 300px;
+    overflow: hidden; }
+    main .join-us .bottom-section .pull-left h3 {
+      font-size: 14px;
+      line-height: 40px;
+      font-family: SimHei; }
+    main .join-us .bottom-section .pull-left p {
+      font-size: 12px;
+      line-height: 18px;
+      font-family: SimSun;
+      color: #aaaaaa; }
+    main .join-us .bottom-section .pull-left a {
+      display: inline-block;
+      padding-left: 15px;
+      color: #959291;
+      background: url("../img/task_1_7_1_04.png") no-repeat 0 center;
+      margin-bottom: 35px; }
+  main .join-us .bottom-section div:last-child {
+    margin-left: 300px; }
+    main .join-us .bottom-section div:last-child input, main .join-us .bottom-section div:last-child textarea {
+      background-color: #ececee; }
+    main .join-us .bottom-section div:last-child input {
+      width: 40%;
+      padding-left: 16px;
+      line-height: 40px;
+      margin: 7px; }
+    main .join-us .bottom-section div:last-child textarea {
+      width: 83%;
+      margin: 7px 0;
+      height: 120px;
+      border: none;
+      outline: none;
+      padding: 15px; }
+    main .join-us .bottom-section div:last-child input:last-child {
+      width: 87%; }
+
+footer {
+  color: #FFFFFF;
+  background-color: #32363e; }
+  footer h2 {
+    font-size: 21px;
+    font-family: SimHei;
+    font-weight: 400;
+    padding-top: 90px;
+    line-height: 30px; }
+  footer p {
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 30px; }
+  footer .link {
+    display: inline-block;
+    overflow: hidden; }
+    footer .link input {
+      line-height: 40px;
+      height: 40px; }
+    footer .link input:first-child {
+      width: 412px;
+      padding: 0 10px; }
+    footer .link input:last-child {
+      padding: 0 20px;
+      background-color: #6f7178;
+      color: #FFFFFF;
+      font-size: 15px; }
+  footer .icon li {
+    display: inline-block;
+    width: 24px;
+    height: 27px;
+    margin: 35px 13px; }
+    footer .icon li a {
+      width: 24px;
+      height: 27px; }
+  footer .icon li:nth-child(1) a {
+    display: inline-block;
+    background: url("../img/task_1_7_1_492.png") no-repeat center; }
+  footer .icon li:nth-child(2) a {
+    display: inline-block;
+    background: url("../img/task_1_7_1_495.png") no-repeat center; }
+  footer .icon li:nth-child(3) a {
+    display: inline-block;
+    background: url("../img/task_1_7_1_497.png") no-repeat center; }
+  footer .icon li:nth-child(4) a {
+    display: inline-block;
+    background: url("../img/task_1_7_1_500.png") no-repeat center; }
+  footer .bottom-bar-bg {
+    background-color: #303039; }
+    footer .bottom-bar-bg .bottom-bar {
+      width: 1140px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding-top: 40px; }
+      footer .bottom-bar-bg .bottom-bar a, footer .bottom-bar-bg .bottom-bar span {
+        font-size: 12px;
+        font-family: SimSun;
+        color: #FFFFFF;
+        line-height: 26px; }
+
+#checked-city {
+  color: #FFFFFF;
+  background: url("../img/task_1_7_1_4.png") no-repeat 10px center;
+  background-color: #bf4f48; }

@@ -1,9 +1,9 @@
 //sass,js默认在source文件夹下
 var gulp = require('gulp'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync').create();
     //babel = require('gulp-babel'),
-    //browserSync = require('browser-sync').create(),
-    //reload      = browserSync.reload,
+    reload      = browserSync.reload;
     //uglify = require('gulp-uglify'),
     //uglifycss = require('gulp-uglifycss'),
     //concat = require('gulp-concat'),
@@ -59,12 +59,12 @@ gulp.task('sass', function () {
 
 // 静态服务器
 gulp.task('watchSass',  ['sass'], function() {
-    //browserSync.init({
-    //    server: {
-    //        baseDir: "./item-pc"
-    //    }
-    //});
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
     gulp.watch("*.scss", ['sass']);
-    //gulp.watch("item-pc/index.html").on('change', reload);
-    //gulp.watch("item-pc/result/*.*").on('change', reload);
+    gulp.watch("./css/style.css").on('change', reload);
+    gulp.watch("./index.html").on('change', reload);
 });
