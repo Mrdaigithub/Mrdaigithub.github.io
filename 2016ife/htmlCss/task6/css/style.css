@@ -147,10 +147,21 @@ header {
         overflow: hidden; }
     .content .article-bottom .index-first {
       float: left;
-      padding-left: 45px;
-      line-height: 40px; }
-      .content .article-bottom .index-first li {
-        padding-top: 30px; }
+      padding-left: 48px;
+      line-height: 40px;
+      position: relative; }
+      .content .article-bottom .index-first:after {
+        content: '';
+        width: 0;
+        height: 0;
+        display: block;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 10px solid #10456b;
+        position: absolute;
+        top: 50%;
+        margin-top: -3px;
+        left: 31px; }
     .content .article-bottom .index-last {
       list-style: none;
       float: right;
