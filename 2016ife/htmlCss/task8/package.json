@@ -1,0 +1,26 @@
+{
+  "name": "task7",
+  "version": "1.0.0",
+  "description": "百度ife html&&css task7",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mrdaigithub/Mrdaigithub.github.io.git"
+  },
+  "author": "Mrdai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mrdaigithub/Mrdaigithub.github.io/issues"
+  },
+  "homepage": "https://github.com/Mrdaigithub/Mrdaigithub.github.io#readme"
+}

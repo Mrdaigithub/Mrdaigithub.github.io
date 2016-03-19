@@ -1,0 +1,35 @@
+
+//reset class
+
+*{
+  margin: 0;
+  padding:0;
+}
+.container{
+  height: 50px;
+  border:1px solid #999;
+  background-color: #eee;
+}
+
+//grid system class
+@media (min-width: 769px) {
+  @for $i from 1 to 13{
+    .col-md-#{$i}{
+      box-sizing: border-box;
+      padding: 10px;
+      float: left;
+      width: 100%/12*$i;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  @for $i from 1 to 13{
+    .col-xs-#{$i}{
+      box-sizing: border-box;
+      padding: 10px;
+      float: left;
+      width: 100%/12*$i;
+    }
+  }
+}
