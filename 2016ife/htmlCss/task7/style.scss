@@ -75,6 +75,14 @@ header{
         color: #e74f4d;
       }
     }
+    &:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5){
+      &:hover{
+        border-bottom: 5px solid #e74f4d;
+        a{
+          color: #e74f4d;
+        }
+      }
+    }
     &:last-child{
       margin-right: 22px;
       a{
@@ -125,43 +133,45 @@ main{
       display: inline-block;
       text-align: center;
       position: relative;
+      vertical-align: top;
       &:after{
         position: absolute;
       }
       p{
-        padding:88px 78px 20px 92px;
+        margin-top: 88px;
+        padding:0 60px 20px 60px;
+      }
+    }
+    li:nth-child(1n+2){
+      &>p{
+        border-left: 1px solid #999999;
+      }
+    }
+    li:nth-child(1n+0){
+      &:after{
+        position: absolute;
+        top:0;
+        margin-left: -21px;
       }
     }
     li:nth-child(1){
       &:after{
         content: url("../img/task_1_7_1_98.png");
-        position: absolute;
-        top:0;
-        margin-left: -21px;
       }
     }
     li:nth-child(2){
       &:after{
         content: url("../img/task_1_7_1_105.png");
-        position: absolute;
-        top:0;
-        margin-left: -21px;
       }
     }
     li:nth-child(3){
       &:after{
         content: url("../img/task_1_7_1_119.png");
-        position: absolute;
-        top:0;
-        margin-left: -21px;
       }
     }
     li:nth-child(4){
       &:after{
         content: url("../img/task_1_7_1_123.png");
-        position: absolute;
-        top:0;
-        margin-left: -21px;
       }
     }
   }
@@ -171,6 +181,7 @@ main{
     h2{
       font-family: SimHei;
       font-size: 54px;
+      font-weight: 500;
       color: #a1a1a1;
     }
     img{
@@ -304,7 +315,7 @@ main{
           position: absolute;
           top:50%;
           margin-top: -14px;
-          right: 0px;
+          right: 0;
         }
         span{
           font-size: 50px;
@@ -422,7 +433,7 @@ main{
     }
   }
   .join-us{
-    .top-section{
+    &>.top-section{
       padding-top: 120px;
       h2{
         font-size: 21px;
@@ -439,7 +450,7 @@ main{
         color: #aaaaaa;
       }
     }
-    .bottom-section{
+    &>.bottom-section{
       width: 1000px;
       margin: 0 auto;
       overflow: hidden;
@@ -447,26 +458,28 @@ main{
       .pull-left{
         width: 300px;
         overflow: hidden;
-        h3{
-          font-size: 14px;
-          line-height: 40px;
-          font-family: SimHei;
-        }
-        p{
-          font-size: 12px;
-          line-height: 18px;
-          font-family: SimSun;
-          color: #aaaaaa;
-        }
-        a{
-          display: inline-block;
-          padding-left: 15px;
-          color: #959291;
-          background: url("../img/task_1_7_1_04.png")no-repeat 0 center;
-          margin-bottom: 35px;
+        &>.text-left{
+          margin-bottom: 30px;
+          h3{
+            font-size: 14px;
+            line-height: 40px;
+            font-family: SimHei;
+            color:#231815;
+          }
+          p{
+            font-size: 12px;
+            line-height: 18px;
+            font-family: SimSun;
+            color: #aaaaaa;
+          }
+          a{
+            padding-left: 15px;
+            color: #959291;
+            background: url("../img/task_1_7_1_04.png")no-repeat 0 center;
+          }
         }
       }
-      div:last-child{
+      &>div:last-child{
         margin-left: 300px;
         input,textarea{
           background-color: #ececee;
