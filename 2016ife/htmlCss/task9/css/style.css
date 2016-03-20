@@ -37,7 +37,7 @@ i {
 
 body > header {
   background-color: #2189bf;
-  padding: 0 93px 0 50px; }
+  padding: 0 66px 0 50px; }
   body > header h1 {
     text-indent: -9999px;
     width: 36px;
@@ -65,7 +65,7 @@ body > header {
     margin: 14px 0;
     position: relative; }
     body > header form input {
-      width: 312px;
+      width: 277px;
       height: 28px;
       border: none;
       border-radius: 14px;
@@ -84,7 +84,7 @@ body > header {
       border: none;
       color: #ffffff;
       font-size: 14px;
-      margin-left: 20px;
+      margin-left: 15px;
       cursor: pointer; }
       body > header form button i {
         vertical-align: middle;
@@ -105,14 +105,14 @@ main aside {
       background-color: #bababe;
       border-radius: 28.5px;
       position: relative;
-      margin-bottom: 24px; }
+      margin-bottom: 21px; }
       main aside .user-area header span {
         font-size: 16px;
         color: #ffffff;
         position: absolute;
         top: 50%;
-        left: 74px;
-        margin-top: -8px; }
+        left: 75px;
+        margin-top: -10px; }
       main aside .user-area header::before {
         content: '';
         width: 53px;

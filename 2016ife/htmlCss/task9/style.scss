@@ -48,7 +48,7 @@ $white:#ffffff;
 
 body>header{
   background-color: $headerBg;
-  padding:0 93px 0 50px;
+  padding: 0 66px 0 50px;
   h1{
     text-indent: -9999px;
     width: 36px;
@@ -79,7 +79,7 @@ body>header{
     margin: 14px 0;
     position: relative;
     input{
-      width: 312px;
+      width: 277px;
       height: 28px;
       border:none;
       border-radius: 14px;
@@ -100,7 +100,7 @@ body>header{
       border:none;
       color: $white;
       font-size: 14px;
-      margin-left: 20px;
+      margin-left: 15px;
       cursor: pointer;
       i{
         vertical-align: middle;
@@ -126,14 +126,14 @@ main{
         background-color: #bababe;
         border-radius: (57px/2);
         position: relative;
-        margin-bottom: 24px;
+        margin-bottom: 21px;
         span{
           font-size: 16px;
           color: $white;
           position: absolute;
           top:50%;
-          left: 74px;
-          margin-top: -8px;
+          left: 75px;
+          margin-top: -10px;
         }
         &::before{
           content: '';
