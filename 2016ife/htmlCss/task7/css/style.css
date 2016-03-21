@@ -61,6 +61,10 @@ header li {
     border-bottom: 5px solid #e74f4d; }
     header li:first-child a {
       color: #e74f4d; }
+  header li:nth-child(2):hover, header li:nth-child(3):hover, header li:nth-child(4):hover, header li:nth-child(5):hover {
+    border-bottom: 5px solid #e74f4d; }
+    header li:nth-child(2):hover a, header li:nth-child(3):hover a, header li:nth-child(4):hover a, header li:nth-child(5):hover a {
+      color: #e74f4d; }
   header li:last-child {
     margin-right: 22px; }
     header li:last-child a {
@@ -98,31 +102,27 @@ main .feature {
     width: 24%;
     display: inline-block;
     text-align: center;
-    position: relative; }
+    position: relative;
+    vertical-align: top; }
     main .feature li:after {
       position: absolute; }
     main .feature li p {
-      padding: 88px 78px 20px 92px; }
+      margin-top: 88px;
+      padding: 0 60px 20px 60px; }
+  main .feature li:nth-child(1n+2) > p {
+    border-left: 1px solid #999999; }
+  main .feature li:nth-child(1n+0):after {
+    position: absolute;
+    top: 0;
+    margin-left: -21px; }
   main .feature li:nth-child(1):after {
-    content: url("../img/task_1_7_1_98.png");
-    position: absolute;
-    top: 0;
-    margin-left: -21px; }
+    content: url("../img/task_1_7_1_98.png"); }
   main .feature li:nth-child(2):after {
-    content: url("../img/task_1_7_1_105.png");
-    position: absolute;
-    top: 0;
-    margin-left: -21px; }
+    content: url("../img/task_1_7_1_105.png"); }
   main .feature li:nth-child(3):after {
-    content: url("../img/task_1_7_1_119.png");
-    position: absolute;
-    top: 0;
-    margin-left: -21px; }
+    content: url("../img/task_1_7_1_119.png"); }
   main .feature li:nth-child(4):after {
-    content: url("../img/task_1_7_1_123.png");
-    position: absolute;
-    top: 0;
-    margin-left: -21px; }
+    content: url("../img/task_1_7_1_123.png"); }
 
 main .question {
   background-color: #edecec;
@@ -130,6 +130,7 @@ main .question {
   main .question h2 {
     font-family: SimHei;
     font-size: 54px;
+    font-weight: 500;
     color: #a1a1a1; }
   main .question img {
     margin-bottom: 47px; }
@@ -236,7 +237,7 @@ main .more .top-section {
       position: absolute;
       top: 50%;
       margin-top: -14px;
-      right: 0px; }
+      right: 0; }
     main .more .top-section .timeTitle span {
       font-size: 50px; }
     main .more .top-section .timeTitle h2 {
@@ -327,60 +328,61 @@ main .more .bottom-section {
       border-bottom: 14px solid transparent;
       border-left: 24px solid #FFFFFF; }
 
-main .join-us .top-section {
+main .join-us > .top-section {
   padding-top: 120px; }
-  main .join-us .top-section h2 {
+  main .join-us > .top-section h2 {
     font-size: 21px;
     font-family: SimHei; }
-  main .join-us .top-section div {
+  main .join-us > .top-section div {
     width: 31px;
     height: 2px;
     background-color: #e74f4d;
     margin: 8px auto 15px auto; }
-  main .join-us .top-section p {
+  main .join-us > .top-section p {
     font-size: 12px;
     color: #aaaaaa; }
 
-main .join-us .bottom-section {
+main .join-us > .bottom-section {
   width: 1000px;
   margin: 0 auto;
   overflow: hidden;
   margin-top: 106px; }
-  main .join-us .bottom-section .pull-left {
+  main .join-us > .bottom-section .pull-left {
     width: 300px;
     overflow: hidden; }
-    main .join-us .bottom-section .pull-left h3 {
-      font-size: 14px;
-      line-height: 40px;
-      font-family: SimHei; }
-    main .join-us .bottom-section .pull-left p {
-      font-size: 12px;
-      line-height: 18px;
-      font-family: SimSun;
-      color: #aaaaaa; }
-    main .join-us .bottom-section .pull-left a {
-      display: inline-block;
-      padding-left: 15px;
-      color: #959291;
-      background: url("../img/task_1_7_1_04.png") no-repeat 0 center;
-      margin-bottom: 35px; }
-  main .join-us .bottom-section div:last-child {
+    main .join-us > .bottom-section .pull-left > .text-left {
+      margin-bottom: 30px; }
+      main .join-us > .bottom-section .pull-left > .text-left h3 {
+        font-size: 14px;
+        line-height: 40px;
+        font-family: SimHei;
+        color: #231815; }
+      main .join-us > .bottom-section .pull-left > .text-left p {
+        font-size: 12px;
+        line-height: 18px;
+        font-family: SimSun;
+        color: #aaaaaa; }
+      main .join-us > .bottom-section .pull-left > .text-left a {
+        padding-left: 15px;
+        color: #959291;
+        background: url("../img/task_1_7_1_04.png") no-repeat 0 center; }
+  main .join-us > .bottom-section > div:last-child {
     margin-left: 300px; }
-    main .join-us .bottom-section div:last-child input, main .join-us .bottom-section div:last-child textarea {
+    main .join-us > .bottom-section > div:last-child input, main .join-us > .bottom-section > div:last-child textarea {
       background-color: #ececee; }
-    main .join-us .bottom-section div:last-child input {
+    main .join-us > .bottom-section > div:last-child input {
       width: 40%;
       padding-left: 16px;
       line-height: 40px;
       margin: 7px; }
-    main .join-us .bottom-section div:last-child textarea {
+    main .join-us > .bottom-section > div:last-child textarea {
       width: 83%;
       margin: 7px 0;
       height: 120px;
       border: none;
       outline: none;
       padding: 15px; }
-    main .join-us .bottom-section div:last-child input:last-child {
+    main .join-us > .bottom-section > div:last-child input:last-child {
       width: 87%; }
 
 footer {

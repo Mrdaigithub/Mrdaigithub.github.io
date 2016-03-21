@@ -19,29 +19,28 @@
             margin-top: -100px;
             margin-left: -200px;
         }
-        .round1,.round2{
-            width: 100px;
-            height: 100px;
-            border-radius: 50px;
+        .box::before,.box::after{
+            content: '';
+            width: 50px;
+            height: 50px;
             background-color: #FFCC00;
             position: absolute;
         }
-        .round1{
-            top:-50px;
-            left: -50px;
+        .box::before{
+            top: 0;
+            left: 0;
+            border-bottom-right-radius: 50px;
         }
-        .round2{
+        .box::after{
             top:100%;
             left:100%;
             margin-top: -50px;
             margin-left: -50px;
+            border-top-left-radius: 50px;
         }
     </style>
 </head>
 <body>
-<div class="box">
-    <div class="round1"></div>
-    <div class="round2"></div>
-</div>
+<div class="box"></div>
 </body>
 </html>

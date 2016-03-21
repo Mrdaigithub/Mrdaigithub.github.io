@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync').create();
     //babel = require('gulp-babel'),
-    reload      = browserSync.reloa;
+    reload      = browserSync.reload;
     //uglify = require('gulp-uglify'),
     //uglifycss = require('gulp-uglifycss'),
     //concat = require('gulp-concat'),
@@ -34,7 +34,7 @@ var gulp = require('gulp'),
 //});
 //sass转css
 gulp.task('sass', function () {
-    return gulp.src('style.scss')
+    return gulp.src('grid.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./css/'));
 });
@@ -65,6 +65,6 @@ gulp.task('watchSass',  ['sass'], function() {
         }
     });
     gulp.watch("*.scss", ['sass']);
-    gulp.watch("./css/style.css").on('change', reload);
+    gulp.watch("./css/*.css").on('change', reload);
     gulp.watch("./index.html").on('change', reload);
 });
