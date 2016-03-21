@@ -16,6 +16,12 @@ i {
 a {
   text-decoration: none; }
 
+button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
 .text-left {
   text-align: left; }
 
@@ -202,7 +208,8 @@ main > div {
       background-color: #ffffff;
       border: 1px solid #bfc3c9;
       vertical-align: top;
-      padding: 15px 0 0 24px; }
+      padding: 15px 0 9px 24px;
+      margin-bottom: 10px; }
       main > div .content form label {
         color: #b7b7b7;
         margin-right: 10px; }
@@ -228,9 +235,14 @@ main > div {
           margin-right: 6px; }
         main > div .content form div:nth-child(3) #useTime {
           width: 69px; }
+        main > div .content form div:nth-child(3) label[for=soleItem] {
+          margin-left: 7px; }
+        main > div .content form div:nth-child(3) #soleItem {
+          margin-left: -4px;
+          width: 120px; }
         main > div .content form div:nth-child(3) select {
           margin-bottom: 4px;
-          padding-right: 13px; }
+          padding-right: 19px; }
       main > div .content form div {
         display: inline-block;
         vertical-align: top; }
@@ -238,5 +250,160 @@ main > div {
         background-color: #388bc0;
         border: none;
         color: #ffffff;
-        padding: 10px 10px;
-        vertical-align: middle; }
+        padding: 6px 12px;
+        vertical-align: middle;
+        margin: 15px 0 0 23px; }
+    main > div .content .history {
+      margin-bottom: 11px; }
+      main > div .content .history .back-btn, main > div .content .history .go-btn {
+        vertical-align: top;
+        width: 31px;
+        height: 63px;
+        background: #ffffff; }
+        main > div .content .history .back-btn::before, main > div .content .history .go-btn::before {
+          content: '';
+          display: block;
+          width: 9px;
+          height: 9px;
+          border-left: 1px solid #AAAAAA;
+          border-top: 1px solid #AAAAAA; }
+      main > div .content .history .back-btn::before {
+        transform: rotate(-45deg);
+        margin: -1px 0 0 12px; }
+      main > div .content .history .go-btn {
+        margin-left: -3px; }
+      main > div .content .history .go-btn::before {
+        transform: rotate(135deg);
+        margin-left: 4px; }
+      main > div .content .history .find-history {
+        border-left: 1px solid #AAAAAA;
+        border-top: 1px solid #AAAAAA;
+        vertical-align: top;
+        margin-left: 3px;
+        width: 125px;
+        height: 63px;
+        line-height: 63px;
+        background: #ffffff; }
+        main > div .content .history .find-history i {
+          display: inline-block;
+          font-size: 30px;
+          margin: 16px 0 0 9px;
+          color: #388ac1; }
+        main > div .content .history .find-history span {
+          display: inline-block;
+          margin-left: 12px;
+          vertical-align: middle; }
+      main > div .content .history ul {
+        display: inline-block;
+        margin: -1px 0 0 -3px; }
+      main > div .content .history .active {
+        border-top: 3px solid #388bc0; }
+      main > div .content .history li {
+        float: left;
+        width: 111px;
+        height: 61px;
+        background-color: #ffffff;
+        text-align: center;
+        border-top: 1px solid #b7b7b7;
+        border-left: 1px solid #b7b7b7;
+        margin-right: 3px;
+        font-family: "Microsoft YaHei"; }
+        main > div .content .history li small {
+          display: inline-block;
+          margin: 8px 0 0 -6px; }
+        main > div .content .history li strong {
+          font-size: 21px;
+          color: #ec6500;
+          margin: 5px 0 0 -4px;
+          display: inline-block; }
+          main > div .content .history li strong span {
+            font-size: 14px;
+            color: #b7b7b7; }
+    main > div .content .sum {
+      margin-bottom: 13px; }
+      main > div .content .sum h3 {
+        font-size: 12px;
+        line-height: 31px;
+        font-weight: 500; }
+      main > div .content .sum ul {
+        margin-top: -5px;
+        overflow: hidden; }
+        main > div .content .sum ul li {
+          text-align: left;
+          display: inline-block;
+          width: 200px;
+          height: 70px;
+          border: 1px solid #d8d9db;
+          background-color: #ffffff;
+          position: relative; }
+          main > div .content .sum ul li::after {
+            content: '';
+            width: 60px;
+            height: 46px;
+            margin-top: -23px;
+            position: absolute;
+            top: 50%;
+            right: 20px; }
+          main > div .content .sum ul li span {
+            display: inline-block;
+            text-indent: 5px; }
+          main > div .content .sum ul li span:first-child {
+            line-height: 24px;
+            margin-top: 13px; }
+          main > div .content .sum ul li span:last-child {
+            line-height: 20px;
+            color: #AAAAAA;
+            font-size: 12px; }
+        main > div .content .sum ul li:nth-child(2), main > div .content .sum ul li:nth-child(3) {
+          margin: 0 10px; }
+        main > div .content .sum ul li:nth-child(1) {
+          border-left: 5px solid #43b29d; }
+          main > div .content .sum ul li:nth-child(1)::after {
+            background-color: #43b29d; }
+        main > div .content .sum ul li:nth-child(2) {
+          border-left: 5px solid #388bc2; }
+          main > div .content .sum ul li:nth-child(2)::after {
+            background-color: #388bc2; }
+        main > div .content .sum ul li:nth-child(3) {
+          border-left: 5px solid #d04b36; }
+          main > div .content .sum ul li:nth-child(3)::after {
+            background-color: #d04b36; }
+        main > div .content .sum ul li:nth-child(4) {
+          border-left: 5px solid #e2cd46; }
+          main > div .content .sum ul li:nth-child(4)::after {
+            background-color: #e2cd46; }
+    main > div .content .first-item {
+      overflow: hidden; }
+      main > div .content .first-item .pull-left {
+        border: 1px solid #d0d2d6;
+        border-radius: 8px;
+        width: 59%;
+        background-color: #ffffff; }
+        main > div .content .first-item .pull-left h3 {
+          font-size: 12px;
+          line-height: 16px;
+          border-bottom: 1px solid #d0d2d6;
+          border-radius: 8px 8px 0 0;
+          background-color: #f3f5f6;
+          padding: 13px 0;
+          text-indent: 13px; }
+        main > div .content .first-item .pull-left ul {
+          margin: 11px 10px 0 10px;
+          overflow: hidden;
+          position: relative; }
+          main > div .content .first-item .pull-left ul .active {
+            border-bottom: none;
+            background-color: #ffffff; }
+          main > div .content .first-item .pull-left ul li {
+            float: left;
+            text-align: center;
+            background-color: #ededf0;
+            border-radius: 5px 5px 0 0;
+            width: 86px;
+            margin-left: 3px;
+            padding: 5px 0; }
+            main > div .content .first-item .pull-left ul li table {
+              position: absolute; }
+            main > div .content .first-item .pull-left ul li:active {
+              border-bottom: none;
+              background-color: #ffffff; }
