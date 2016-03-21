@@ -8,8 +8,14 @@ html,body{
   font: 12px SimHei;
   color: #000;
 }
+ul{
+  list-style: none;
+}
 i{
   font-style: normal;
+}
+a{
+  text-decoration: none;
 }
 .text-left{
   text-align: left;
@@ -48,7 +54,7 @@ $white:#ffffff;
 
 body>header{
   background-color: $headerBg;
-  padding: 0 66px 0 50px;
+  padding: 0 71px 0 50px;
   h1{
     text-indent: -9999px;
     width: 36px;
@@ -99,7 +105,7 @@ body>header{
       background: none;
       border:none;
       color: $white;
-      font-size: 14px;
+      font-size: 12px;
       margin-left: 15px;
       cursor: pointer;
       i{
@@ -117,6 +123,9 @@ main{
     width: 260px;
     background-color: #2a2e3d;
     color: #6e8095;
+    position: relative;
+    top:0;
+    bottom:0;
     .user-area{
       overflow: hidden;
       padding-bottom: 23px;
@@ -170,6 +179,132 @@ main{
         border-left: 3px solid #323647;
         padding-left: 30px;
         margin-left: 0;
+      }
+    }
+    &>ul{
+      margin-top: -5px;
+      a{
+        color: #566477;
+      }
+      line-height: 48px;
+      &>li{
+        &>a{
+          &>i{
+            padding-right: 12px;
+          }
+        }
+        &>ul{
+          padding-left: 19px;
+          &>li{
+            margin-top: -17px;
+            &::before{
+              content: '';
+              width: 10px;
+              height: 10px;
+              border-left: 1px solid #566477;
+              border-top: 1px solid #566477;
+              transform: rotate(135deg);
+              display: inline-block;
+              margin-right: 10px;
+            }
+            &>ul{
+              padding-left: 35px;
+              &>li{
+                margin-top: -19px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &>div{
+    margin-left: 260px;
+    background-color: #eeeeee;
+    .breadcrumb{
+      padding:4px 0 6px 29px;
+      line-height: 22px;
+      background-color: $white;
+      a{
+        color: #b7b7b7;
+      }
+      li{
+        display: inline-block;
+        &::after{
+          content: ' /';
+        }
+      }
+      .active{
+        color: #388bc0;
+        &::after{
+          content: '';
+          display: none;
+        }
+      }
+    }
+    .content{
+      width: 892px;
+      margin: 17px auto 0 auto;
+      form{
+        background-color: $white;
+        border:1px solid #bfc3c9;
+        vertical-align: top;
+        padding: 15px 0 0 24px;
+        label{
+          color: #b7b7b7;
+          margin-right: 10px;
+        }
+        select{
+          height: 26px;
+        }
+        div:first-child{
+          select{
+            width: 69px;
+          }
+        }
+        div:nth-child(2){
+          padding-right: 28px;
+          background: url("../images/task_1_9_1_03.png")no-repeat 160px 8px;
+          select{
+            width: 119px;
+            margin-bottom: 4px;
+          }
+        }
+        div:nth-child(2),div:nth-child(3){
+          margin-left: 31px;
+        }
+        div:nth-child(3){
+          margin-left: 26px;
+          input[type=date]{
+            width: 117px;
+            padding:0;
+          }
+          label[for=useTime]{
+            margin-left: 8px;
+            margin-right: 6px;
+          }
+          #useTime{
+            width: 69px;
+          }
+          #man{
+
+          }
+          select{
+            margin-bottom: 4px;
+            padding-right: 13px;
+          }
+        }
+        div{
+          display: inline-block;
+          vertical-align: top;
+        }
+        input[type="submit"]{
+          background-color: #388bc0;
+          border:none;
+          color: #ffffff;
+          padding:10px 10px;
+          vertical-align: middle;
+        }
       }
     }
   }

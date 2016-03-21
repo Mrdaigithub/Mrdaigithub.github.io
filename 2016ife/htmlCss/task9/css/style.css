@@ -7,8 +7,14 @@ html, body {
   font: 12px SimHei;
   color: #000; }
 
+ul {
+  list-style: none; }
+
 i {
   font-style: normal; }
+
+a {
+  text-decoration: none; }
 
 .text-left {
   text-align: left; }
@@ -37,7 +43,7 @@ i {
 
 body > header {
   background-color: #2189bf;
-  padding: 0 66px 0 50px; }
+  padding: 0 71px 0 50px; }
   body > header h1 {
     text-indent: -9999px;
     width: 36px;
@@ -83,7 +89,7 @@ body > header {
       background: none;
       border: none;
       color: #ffffff;
-      font-size: 14px;
+      font-size: 12px;
       margin-left: 15px;
       cursor: pointer; }
       body > header form button i {
@@ -95,7 +101,10 @@ main aside {
   padding: 18px 0 0 45px;
   width: 260px;
   background-color: #2a2e3d;
-  color: #6e8095; }
+  color: #6e8095;
+  position: relative;
+  top: 0;
+  bottom: 0; }
   main aside .user-area {
     overflow: hidden;
     padding-bottom: 23px; }
@@ -143,3 +152,91 @@ main aside {
       border-left: 3px solid #323647;
       padding-left: 30px;
       margin-left: 0; }
+  main aside > ul {
+    margin-top: -5px;
+    line-height: 48px; }
+    main aside > ul a {
+      color: #566477; }
+    main aside > ul > li > a > i {
+      padding-right: 12px; }
+    main aside > ul > li > ul {
+      padding-left: 19px; }
+      main aside > ul > li > ul > li {
+        margin-top: -17px; }
+        main aside > ul > li > ul > li::before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          border-left: 1px solid #566477;
+          border-top: 1px solid #566477;
+          transform: rotate(135deg);
+          display: inline-block;
+          margin-right: 10px; }
+        main aside > ul > li > ul > li > ul {
+          padding-left: 35px; }
+          main aside > ul > li > ul > li > ul > li {
+            margin-top: -19px; }
+
+main > div {
+  margin-left: 260px;
+  background-color: #eeeeee; }
+  main > div .breadcrumb {
+    padding: 4px 0 6px 29px;
+    line-height: 22px;
+    background-color: #ffffff; }
+    main > div .breadcrumb a {
+      color: #b7b7b7; }
+    main > div .breadcrumb li {
+      display: inline-block; }
+      main > div .breadcrumb li::after {
+        content: ' /'; }
+    main > div .breadcrumb .active {
+      color: #388bc0; }
+      main > div .breadcrumb .active::after {
+        content: '';
+        display: none; }
+  main > div .content {
+    width: 892px;
+    margin: 17px auto 0 auto; }
+    main > div .content form {
+      background-color: #ffffff;
+      border: 1px solid #bfc3c9;
+      vertical-align: top;
+      padding: 15px 0 0 24px; }
+      main > div .content form label {
+        color: #b7b7b7;
+        margin-right: 10px; }
+      main > div .content form select {
+        height: 26px; }
+      main > div .content form div:first-child select {
+        width: 69px; }
+      main > div .content form div:nth-child(2) {
+        padding-right: 28px;
+        background: url("../images/task_1_9_1_03.png") no-repeat 160px 8px; }
+        main > div .content form div:nth-child(2) select {
+          width: 119px;
+          margin-bottom: 4px; }
+      main > div .content form div:nth-child(2), main > div .content form div:nth-child(3) {
+        margin-left: 31px; }
+      main > div .content form div:nth-child(3) {
+        margin-left: 26px; }
+        main > div .content form div:nth-child(3) input[type=date] {
+          width: 117px;
+          padding: 0; }
+        main > div .content form div:nth-child(3) label[for=useTime] {
+          margin-left: 8px;
+          margin-right: 6px; }
+        main > div .content form div:nth-child(3) #useTime {
+          width: 69px; }
+        main > div .content form div:nth-child(3) select {
+          margin-bottom: 4px;
+          padding-right: 13px; }
+      main > div .content form div {
+        display: inline-block;
+        vertical-align: top; }
+      main > div .content form input[type="submit"] {
+        background-color: #388bc0;
+        border: none;
+        color: #ffffff;
+        padding: 10px 10px;
+        vertical-align: middle; }
