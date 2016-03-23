@@ -129,8 +129,8 @@ main{
     width: 260px;
     background-color: #2a2e3d;
     color: #6e8095;
-    position: relative;
-    top:0;
+    position: absolute;
+    top: 56px;
     bottom:0;
     .user-area{
       overflow: hidden;
@@ -473,43 +473,178 @@ main{
       }
       .first-item{
         overflow: hidden;
+        h3{
+          font-size: 12px;
+          line-height: 16px;
+          font-weight: 300;
+          color: #aaaaaa;
+          border-radius: 8px 8px 0 0;
+          padding:11px 0;
+          background-color: #f3f5f6;
+          text-indent: 15px;
+        }
         .pull-left{
-          border:1px solid #d0d2d6;
-          border-radius: 8px;
           width: 59%;
-          background-color: $white;
-          h3{
+          border:1px solid #cfd1d4;
+          border-radius: 8px;
+          div{
+            padding: 14px 0 14px 0;
+            ul:first-child{
+              overflow: hidden;
+              margin-left: 16px;
+              li{
+                float: left;
+                padding: 6px 23px;
+                line-height: 16px;
+                margin-right: 7px;
+                background-color: #ededf0;
+                border-radius: 5px 5px 0 0;
+                position: relative;
+                &::after{
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  bottom: 0;
+                  left:0;
+                  height: 5px;
+                  background-color: #ececef;
+                }
+                a{
+                  color: #000;
+                  font-size: 12px;
+                  line-height: 16px;
+                }
+              }
+              .active{
+                background-color: #ffffff;
+                border:1px solid #dadada;
+                border-bottom: none;
+              }
+            }
+            ul:last-child{
+              box-sizing: border-box;
+              padding: 0 50px 0 35px;
+              width: 488px;
+              margin: 0 10px 0 16px;
+              background-color: #ffffff;
+              border: 1px solid #dadada;
+              table{
+                border-collapse:collapse;
+                margin: 26px 0 26px 0;
+              }
+              table,tr,td{
+                border:1px solid #dddddd;
+              }
+              td{
+                padding: 9px 22px 6px 17px;
+              }
+            }
+          }
+        }
+        .pull-right{
+          width: 40%;
+          border-radius: 8px;
+          border:1px solid #dadada;
+          form{
+            color: #535353;
+            border:none;
             font-size: 12px;
             line-height: 16px;
-            border-bottom: 1px solid #d0d2d6;
-            border-radius: 8px 8px 0 0;
-            background-color: #f3f5f6;
-            padding:13px 0;
-            text-indent: 13px;
-          }
-          ul{
-            margin: 11px 10px 0 10px;
-            overflow: hidden;
-            position: relative;
-            .active{
-              border-bottom: none;
-              background-color: $white;
+            padding: 19px 50px 0 50px;
+            input[type=text],textarea{
+              border:none;
             }
-            li{
-              float: left;
-              text-align: center;
-              background-color: #ededf0;
-              border-radius: 5px 5px 0 0;
-              width: 86px;
-              margin-left: 3px;
-              padding:5px 0;
-              table{
-                position: absolute;
+            textarea{
+              overflow: hidden;
+              resize:none;
+            }
+            label{
+              color: #c3c2c2;
+            }
+            #title{
+              margin-bottom: 10px;
+            }
+            .pull-left{
+              border-radius: 0;
+              border:1px solid #e7e7e7;
+              border-left: none;
+              border-right: none;
+              width: 30%;
+              #price{
+                margin-top: 6px;
               }
-              &:active{
-                border-bottom: none;
-                background-color: $white;
+            }
+            .right{
+              box-sizing: border-box;
+              width: 70%;
+              border:1px solid #e7e7e7;
+              padding-left: 14px;
+              border-right: none;
+              #thingMan{
+                margin-top: 6px;
               }
+            }
+            label[for=detail]{
+              display: inline-block;
+              margin: 8px 0 2px 0;
+            }
+            #confidential{
+              background-color: #d5d5d5;
+              outline: none;
+              border: none;
+              margin-top: 12px;
+            }
+            textarea{
+              height: 120px;
+            }
+            input[type=submit]{
+              width: 51px;
+              padding: 5px 0;
+              margin: 4px 0;
+              border-radius: 3px;
+            }
+          }
+        }
+      }
+      .other{
+        overflow: hidden;
+        padding-top: 34px;
+        .calendar{
+          width: 350px;
+          border:1px solid #d2d5d7;
+          border-radius: 8px;
+          h3{
+            color: #aaaaaa;
+            font-family: 'Microsoft YaHei';
+            font-size: 12px;
+            line-height: 17px;
+            background-color: #f3f6f6;
+            text-indent: 14px;
+            font-weight: 300;
+            padding:11px 0;
+            border-radius: 8px 8px 0 0;
+          }
+          form{
+            text-align: center;
+            padding: 8px 0;
+            margin-bottom: 0;
+            border:none;
+            select,input{
+              margin: 0 6px;
+            }
+          }
+          table{
+            border-top: 1px solid #a8d0ec;
+            box-sizing: border-box;
+            text-align: center;
+            width: 100%;
+            font-size: 12px;
+            line-height: 16px;
+            background-color: #fff;
+            padding-top: 3px;
+            thead{
+              border-bottom: 1px solid #e1e1e1;
+              padding:1px 0;
             }
           }
         }

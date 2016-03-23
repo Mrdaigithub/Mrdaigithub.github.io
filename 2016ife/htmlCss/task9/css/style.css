@@ -108,8 +108,8 @@ main aside {
   width: 260px;
   background-color: #2a2e3d;
   color: #6e8095;
-  position: relative;
-  top: 0;
+  position: absolute;
+  top: 56px;
   bottom: 0; }
   main aside .user-area {
     overflow: hidden;
@@ -374,36 +374,145 @@ main > div {
             background-color: #e2cd46; }
     main > div .content .first-item {
       overflow: hidden; }
+      main > div .content .first-item h3 {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 300;
+        color: #aaaaaa;
+        border-radius: 8px 8px 0 0;
+        padding: 11px 0;
+        background-color: #f3f5f6;
+        text-indent: 15px; }
       main > div .content .first-item .pull-left {
-        border: 1px solid #d0d2d6;
-        border-radius: 8px;
         width: 59%;
-        background-color: #ffffff; }
-        main > div .content .first-item .pull-left h3 {
+        border: 1px solid #cfd1d4;
+        border-radius: 8px; }
+        main > div .content .first-item .pull-left div {
+          padding: 14px 0 14px 0; }
+          main > div .content .first-item .pull-left div ul:first-child {
+            overflow: hidden;
+            margin-left: 16px; }
+            main > div .content .first-item .pull-left div ul:first-child li {
+              float: left;
+              padding: 6px 23px;
+              line-height: 16px;
+              margin-right: 7px;
+              background-color: #ededf0;
+              border-radius: 5px 5px 0 0;
+              position: relative; }
+              main > div .content .first-item .pull-left div ul:first-child li::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                left: 0;
+                height: 5px;
+                background-color: #ececef; }
+              main > div .content .first-item .pull-left div ul:first-child li a {
+                color: #000;
+                font-size: 12px;
+                line-height: 16px; }
+            main > div .content .first-item .pull-left div ul:first-child .active {
+              background-color: #ffffff;
+              border: 1px solid #dadada;
+              border-bottom: none; }
+          main > div .content .first-item .pull-left div ul:last-child {
+            box-sizing: border-box;
+            padding: 0 50px 0 35px;
+            width: 488px;
+            margin: 0 10px 0 16px;
+            background-color: #ffffff;
+            border: 1px solid #dadada; }
+            main > div .content .first-item .pull-left div ul:last-child table {
+              border-collapse: collapse;
+              margin: 26px 0 26px 0; }
+            main > div .content .first-item .pull-left div ul:last-child table, main > div .content .first-item .pull-left div ul:last-child tr, main > div .content .first-item .pull-left div ul:last-child td {
+              border: 1px solid #dddddd; }
+            main > div .content .first-item .pull-left div ul:last-child td {
+              padding: 9px 22px 6px 17px; }
+      main > div .content .first-item .pull-right {
+        width: 40%;
+        border-radius: 8px;
+        border: 1px solid #dadada; }
+        main > div .content .first-item .pull-right form {
+          color: #535353;
+          border: none;
           font-size: 12px;
           line-height: 16px;
-          border-bottom: 1px solid #d0d2d6;
-          border-radius: 8px 8px 0 0;
-          background-color: #f3f5f6;
-          padding: 13px 0;
-          text-indent: 13px; }
-        main > div .content .first-item .pull-left ul {
-          margin: 11px 10px 0 10px;
-          overflow: hidden;
-          position: relative; }
-          main > div .content .first-item .pull-left ul .active {
-            border-bottom: none;
-            background-color: #ffffff; }
-          main > div .content .first-item .pull-left ul li {
-            float: left;
-            text-align: center;
-            background-color: #ededf0;
-            border-radius: 5px 5px 0 0;
-            width: 86px;
-            margin-left: 3px;
-            padding: 5px 0; }
-            main > div .content .first-item .pull-left ul li table {
-              position: absolute; }
-            main > div .content .first-item .pull-left ul li:active {
-              border-bottom: none;
-              background-color: #ffffff; }
+          padding: 19px 50px 0 50px; }
+          main > div .content .first-item .pull-right form input[type=text], main > div .content .first-item .pull-right form textarea {
+            border: none; }
+          main > div .content .first-item .pull-right form textarea {
+            overflow: hidden;
+            resize: none; }
+          main > div .content .first-item .pull-right form label {
+            color: #c3c2c2; }
+          main > div .content .first-item .pull-right form #title {
+            margin-bottom: 10px; }
+          main > div .content .first-item .pull-right form .pull-left {
+            border-radius: 0;
+            border: 1px solid #e7e7e7;
+            border-left: none;
+            border-right: none;
+            width: 30%; }
+            main > div .content .first-item .pull-right form .pull-left #price {
+              margin-top: 6px; }
+          main > div .content .first-item .pull-right form .right {
+            box-sizing: border-box;
+            width: 70%;
+            border: 1px solid #e7e7e7;
+            padding-left: 14px;
+            border-right: none; }
+            main > div .content .first-item .pull-right form .right #thingMan {
+              margin-top: 6px; }
+          main > div .content .first-item .pull-right form label[for=detail] {
+            display: inline-block;
+            margin: 8px 0 2px 0; }
+          main > div .content .first-item .pull-right form #confidential {
+            background-color: #d5d5d5;
+            outline: none;
+            border: none;
+            margin-top: 12px; }
+          main > div .content .first-item .pull-right form textarea {
+            height: 120px; }
+          main > div .content .first-item .pull-right form input[type=submit] {
+            width: 51px;
+            padding: 5px 0;
+            margin: 4px 0;
+            border-radius: 3px; }
+    main > div .content .other {
+      overflow: hidden;
+      padding-top: 34px; }
+      main > div .content .other .calendar {
+        width: 350px;
+        border: 1px solid #d2d5d7;
+        border-radius: 8px; }
+        main > div .content .other .calendar h3 {
+          color: #aaaaaa;
+          font-family: 'Microsoft YaHei';
+          font-size: 12px;
+          line-height: 17px;
+          background-color: #f3f6f6;
+          text-indent: 14px;
+          font-weight: 300;
+          padding: 11px 0;
+          border-radius: 8px 8px 0 0; }
+        main > div .content .other .calendar form {
+          text-align: center;
+          padding: 8px 0;
+          margin-bottom: 0;
+          border: none; }
+          main > div .content .other .calendar form select, main > div .content .other .calendar form input {
+            margin: 0 6px; }
+        main > div .content .other .calendar table {
+          border-top: 1px solid #a8d0ec;
+          box-sizing: border-box;
+          text-align: center;
+          width: 100%;
+          font-size: 12px;
+          line-height: 16px;
+          background-color: #fff;
+          padding-top: 3px; }
+          main > div .content .other .calendar table thead {
+            border-bottom: 1px solid #e1e1e1;
+            padding: 1px 0; }
