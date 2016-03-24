@@ -1,0 +1,104 @@
+*{
+  margin:0;
+  padding:0;
+}
+html,body {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  user-select: none;
+  font-size: 12px;
+}
+i{
+  font-style: normal;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+a, img {
+  -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+}
+ul,li{
+  list-style: none;
+}
+header{
+  background-color: #91d4da;
+  color:#FFFFFF;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 4rem;
+  a{
+    position: absolute;
+    left: 1rem;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+  }
+}
+nav{
+  ul{
+    display: flex;
+    justify-content: space-around;
+    li{
+      text-align: center;
+      flex: 1;
+      padding:0.8rem 0;
+    }
+    a{
+      padding:0.8rem 0;
+      font-size: 1.2rem;
+    }
+    li:nth-child(2){
+      border-bottom: 5px solid #91d4da;
+    }
+  }
+}
+
+.banner{
+  width: 100%;
+}
+.note{
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0;
+  li{
+    text-align: center;
+    font-size: 1.3rem;
+    i{
+      color: #FFFFFF;
+      display: block;
+      font-size: 2.5rem;
+      padding:0.5rem;
+      border-radius: 50%;
+      background-color: #00c7d6;
+      justify-content: center;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.title-bar{
+  display: flex;
+  align-items: flex-end;
+  margin: 0 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #dedede;
+  li{
+    text-align: center;
+    flex:1;
+    div{
+      height:8rem;
+    }
+    img{
+      height: 100%;
+    }
+  }
+  li:nth-child(2){
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+  }
+}
+
+.module1{
+  
+}
