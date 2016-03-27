@@ -30,8 +30,9 @@ gulp.task('sass', function () {
     return gulp.src('*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
+            browsers: ['last 2 versions','Android >= 4.0','> 5%'],
+            cascade: true,
+            remove:true
         }))
         .pipe(uglifycss({
             "maxLineLen": 80,
