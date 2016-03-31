@@ -35,16 +35,10 @@
      * 返回一个数组，格式见函数中示例
      */
     function getData() {
+        /*
+         coding here
+         */
 
-        var source = document.getElementById('source'),
-                sourceChild = source.children,
-                data = [];
-
-        for (let i=0; i<sourceChild.length; i++){
-            data[i] = [sourceChild[i].getElementsByTagName('b')[0].innerHTML]
-            let city = sourceChild[i].innerHTML;
-            console.log();
-        }
         /*
          data = [
          ["北京", 90],
@@ -52,18 +46,29 @@
          ……
          ]
          */
-
+        let data = [],
+                source = document.getElementById('source'),
+                child = source.children;
+        for (let i=0; i<child.length; i++){
+            let city = child[i].innerHTML.substr(0,2),
+                    num = child[i].getElementsByTagName('b')[0].innerHTML;
+            data[i] = [];
+            data[i].push(city);
+            data[i].push(num);
+        }
         return data;
-
     }
-getData();
+
     /**
      * sortAqiData
      * 按空气质量对data进行从小到大的排序
      * 返回一个排序后的数组
      */
     function sortAqiData(data) {
-
+        data.sort(function (a, b){
+            return b[1]-a[1];
+        });
+        return data;
     }
 
     /**
@@ -72,9 +77,14 @@ getData();
      * 格式见ul中的注释的部分
      */
     function render(data) {
-
+        let resort = document.getElementById('resort'),
+                str = '',
+                rank = ['一','二','三','四','五','六','七','八','九','十'];
+        for (let i=0;i<data.length;i++){
+            str += '<li>第'+rank[i]+'名: '+data[i][0]+': '+'<b>'+data[i][1]+'</b></li>';
+        }
+        resort.innerHTML = str;
     }
-
     function btnHandle() {
         var aqiData = getData();
         aqiData = sortAqiData(aqiData);
@@ -85,7 +95,8 @@ getData();
     function init() {
 
         // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
-
+        let sortBtn = document.getElementById('sort-btn');
+        sortBtn.addEventListener('click',btnHandle,false);
     }
 
     init();
