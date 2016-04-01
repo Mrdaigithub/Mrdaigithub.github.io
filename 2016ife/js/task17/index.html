@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+    <script src="index.js"></script>
+    <style>
+        *{
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            -ms-transition: 1s;
+            -o-transition: 1s;
+            transition: 1s;
+            margin: 0;
+            padding:0;
+        }
+        body{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        fieldset{
+            padding:12px;
+        }
+        .aqi-chart-wrap{
+            width: 1200px;
+            border:1px solid #ccc;
+            border-radius: 10px;
+            position: absolute;
+            top:150px;
+            bottom: 10px;
+        }
+        .aqi-chart-wrap h2{
+            text-align: center;
+        }
+        .aqi-chart-wrap ul{
+            width: 1200px;
+            list-style: none;
+            position: absolute;
+            bottom: 0;
+        }
+        .aqi-chart-wrap li{
+            float: left;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<fieldset id="form-gra-time">
+    <legend>请选择日期粒度：</legend>
+    <label>日<input name="gra-time" value="day" type="radio" checked="checked"></label>
+    <label>周<input name="gra-time" value="week" type="radio"></label>
+    <label>月<input name="gra-time" value="month" type="radio"></label>
+</fieldset>
+
+<fieldset>
+    <legend>请选择查看的城市：</legend>
+    <select id="city-select">
+        <option>北京</option>
+        <option>上海</option>
+        <option>厦门</option>
+        <option>广州</option>
+        <option>成都</option>
+        <option>沈阳</option>
+        <option>深圳</option>
+        <option>福州</option>
+        <option>西安</option>
+    </select>
+</fieldset>
+
+<div class="aqi-chart-wrap">
+    <h2 id="title"></h2>
+    <ul id="chart"></ul>
+</div>
+</body>
+</html>
