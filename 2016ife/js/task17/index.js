@@ -72,17 +72,10 @@
         nowGraTime: "day"
     };
 
-    //随机颜色
-    function getColor() {
-        var colors = ['#990000','#993300','#99CCCC','#99CCFF','#CC0000','#CC9900','#CCCCFF','#66CC66','#6699CC','#999999'],
-            result = colors[Math.floor(Math.random()*10)];
-        return result;
-    }
     /**
      * 渲染图表
      */
     function renderChart() {
-        var colors = getColor();
     }
     /**
      * 日、周、月的radio事件点击时的处理函数
@@ -113,7 +106,7 @@
      * 初始化日、周、月的radio事件，当点击时，调用函数graTimeChange
      */
     function initGraTimeForm() {
-
+        
     }
 
     /**
@@ -126,12 +119,36 @@
 
     }
 
+    //随机颜色
+    function getColor() {
+        var colors = ['#990000','#993300','#99CCCC','#99CCFF','#CC0000','#CC9900','#CCCCFF','#66CC66','#6699CC','#999999'],
+            result = colors[Math.floor(Math.random()*10)];
+        return result;
+    }
+
+    //获得当个数据条宽度
+    function getWidth() {
+        
+    }
     /**
      * 初始化图表需要的数据格式
      */
     function initAqiChartData() {
         // 将原始的源数据处理成图表需要的数据格式
         // 处理好的数据存到 chartData 中
+        var data = {},
+            colors = getColor(),
+            width = null;
+        switch (pageState.nowSelectCity){
+            case -1:
+                width =
+                break;
+            case 0:
+                break;
+            case 1:
+                break;
+        }
+        return data;
     }
 
     /**
