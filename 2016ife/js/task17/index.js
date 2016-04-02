@@ -8,19 +8,6 @@
      "2016-01-04": 10
      }
      };
-     任务描述
-
-     参考以下示例代码，原始数据包含几个城市的空气质量指数数据
-     用户可以选择查看不同的时间粒度，以选择要查看的空气质量指数是以天为粒度还是以周或月为粒度
-     天：显示每天的空气质量指数
-     周：以自然周（周一到周日）为粒度，统计一周7天的平均数为这一周的空气质量数值，如果数据中缺少一个自然周的几天，则按剩余天进行计算
-     月：以自然月为粒度，统一一个月所有天的平均数为这一个月的空气质量数值
-     用户可以通过select切换城市
-     通过在"aqi-chart-wrap"里添加DOM，来模拟一个柱状图图表，横轴是时间，纵轴是空气质量指数，参考图（点击打开）。天、周、月的数据只根据用户的选择显示一种。
-     天：每天的数据是一个很细的矩形
-     周：每周的数据是一个矩形
-     月：每周的数据是一个很粗的矩形
-     鼠标移动到柱状图的某个柱子时，用title属性提示这个柱子的具体日期和数据
      */
 
     // 变量
@@ -82,8 +69,27 @@
      */
     function graTimeChange() {
         // 确定是否选项发生了变化
+        var input = formGraTime.getElementsByTagName('input'),
+            checked = null;
+        for (var i=0;i<input.length;i++){
+            if (input[i].checked){
+                checked = input[i];
+                break;
+            }
+        }
 
         // 设置对应数据
+        switch (checked){
+            case input[0]:
+                pageState.nowGraTime = 'day';
+                break;
+            case input[1]:
+                pageState.nowGraTime = 'week';
+                break;
+            case input[2]:
+                pageState.nowGraTime = 'month';
+                break;
+        }
 
         // 调用图表渲染函数
         renderChart();
@@ -94,19 +100,35 @@
      */
     function citySelectChange() {
         // 确定是否选项发生了变化
+        var options = citySelect.children;
+
+        for (var i=0;i<options.length;i++){
+            if (options[i].selected){
+                pageState.nowSelectCity = i-1;
+                break;
+            }
+        }
 
         // 设置对应数据
 
         // 调用图表渲染函数
         renderChart();
     }
-    citySelectChange();
 
     /**
      * 初始化日、周、月的radio事件，当点击时，调用函数graTimeChange
      */
     function initGraTimeForm() {
+<<<<<<< HEAD
         
+=======
+        formGraTime.addEventListener('click',function (event) {
+            var e = window.event || event;
+            if (e.target.nodeName === 'INPUT'){
+                graTimeChange();
+            }
+        },false);
+>>>>>>> ea332ae776c9c936d17f3e260503356df2b75621
     }
 
     /**
@@ -114,9 +136,15 @@
      */
     function initCitySelector() {
         // 读取aqiSourceData中的城市，然后设置id为city-select的下拉列表中的选项
-
+        var str = '';
+        for (var city in aqiSourceData){
+            str += '<option>'+city+'</option>';
+        }
+        citySelect.innerHTML = str;
         // 给select设置事件，当选项发生变化时调用函数citySelectChange
-
+        citySelect.addEventListener('click',function () {
+            citySelectChange();
+        },false)
     }
 
     //随机颜色
@@ -136,6 +164,7 @@
     function initAqiChartData() {
         // 将原始的源数据处理成图表需要的数据格式
         // 处理好的数据存到 chartData 中
+<<<<<<< HEAD
         var data = {},
             colors = getColor(),
             width = null;
@@ -149,6 +178,36 @@
                 break;
         }
         return data;
+=======
+        var chartData = {
+            city: null,
+            singleChart:[]
+        },
+            count = 0,
+            option = citySelect.children,
+            obj = {
+                width: 0,
+                height: 0,
+                pos: null,
+                color: null
+            };
+        console.log(aqiSourceData);
+        switch (pageState.nowGraTime){
+            case 'day':
+                city = option[pageState.nowSelectCity+1];
+                for (let i in aqiSourceData[city.innerHTML]){
+                    count++;
+                }
+                console.log(count);
+                break;
+            case 'week':
+                city = option[pageState.nowSelectCity+1];
+                break;
+            case 'month':
+                city = option[pageState.nowSelectCity+1];
+                break;
+        }
+>>>>>>> ea332ae776c9c936d17f3e260503356df2b75621
     }
 
     /**
