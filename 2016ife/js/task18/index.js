@@ -9,87 +9,99 @@
 // 点击队列中任何一个元素，则该元素会被从队列中删除
 
 (function (WIN, DOC) {
-    var form = DOC.getElementById('form'),
+    let form = DOC.getElementById('form'),
         text = DOC.getElementById('text');
+    class Team{
 
-    function Team() {
-        this.list = DOC.getElementById('list');
-        this.arr = [];
-    }
-
-
-    Team.prototype = {
+        constructor(){
+            this.list = DOC.getElementById('list');
+            this.arr = [];
+        }
 
         /**
          * 右侧入
          * @param data
          * @returns {*}
          */
-        push:function (data) {
+        push(data){
             this.arr.push(data);
-            Team.prototype.render();
+            this.render();
             return data;
-        },
+        }
 
         /**
          * 右侧出
-         * @returns {*}
+         * @returns {T}
          */
-        pop:function () {
-            Team.prototype.render();
-            return this.arr.pop();
-        },
+        pop(){
+            let val = this.arr.pop();
+            this.render();
+            alert(val);
+            return val;
+        }
 
         /**
          * 左侧入
          * @param data
          * @returns {*}
          */
-        unshift:function (data) {
+        unshift(data){
             this.arr.unshift(data);
-            Team.prototype.render();
+            this.render();
             return data;
-        },
+        }
 
         /**
          * 左侧出
-         * @returns {*}
+         * @returns {*|T}
          */
-        shift:function () {
-            Team.prototype.render();
-            return this.arr.shift();
+        shift(){
+            let val = this.arr.shift();
+            this.render();
+            alert(val);
+            return val;
         }
-    };
 
-    /**
-     * 重绘
-     */
-    Team.prototype.render = function () {
-        var str = '';
-        console.log(this === Team);
-        Team.arr.forEach(function (e) {
-            str += '<li>' +e+ '</li>';
-        });
-        this.list.innerHTML = str;
-    };
+        rmEverything(){
+            this.list.addEventListener('click',(event)=>{
+                let e = WIN.event || event;
+                if (e.target.nodeName === 'LI'){
+                    let val = e.target.innerHTML;
+                    this.list.removeChild(e.target);
+                    alert(val);
+                }
+            },false)
+        }
 
-    /**
-     * 初始化
-     */
-    Team.prototype.init = function () {
-        Team.prototype.render();
-    };
+        /**
+         * 重绘
+         * @returns {boolean}
+         */
+        render(){
+            let str = '';
+            this.arr.forEach(function (e) {
+                str += '<li>'+e+'</li>';
+            });
+            this.list.innerHTML = str;
+            return true;
+        }
+
+        init(){
+            this.rmEverything();
+            this.render();
+        }
+    }
 
     var myTeam = new Team();
-    console.log(myTeam);
+    myTeam.init();
     form.addEventListener('click',function (event) {
         var e = window.event || event;
         switch (e.target.value){
             case '左侧入':
-                myTeam.unshift(text);
+                myTeam.unshift(parseInt(text.value));
                 break;
             case '右侧入':
-                myTeam.push(text);
+                myTeam.push(parseInt(text.value));
                 break;
             case '左侧出':
                 myTeam.shift();
