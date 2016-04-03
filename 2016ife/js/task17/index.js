@@ -79,7 +79,8 @@
         setTimeout(function () {
             var child = chart.children;
             for (var i=0;i<child.length;i++){
-                child[i].style.height = chartData.single[i].height;
+                console.log(chartData.single[i].height);
+                child[i].style.height = chartData.single[i].height+'px';
             }
         },100);
     }
