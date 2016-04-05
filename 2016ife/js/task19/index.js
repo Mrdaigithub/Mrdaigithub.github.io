@@ -12,6 +12,7 @@
         constructor(){
             this.list = DOC.getElementById('list');
             this.arr = [];
+            this.val = null;
         }
 
         /**
@@ -19,13 +20,15 @@
          * @returns {boolean}
          */
         regText(){
-            if (text.value <10 || text.value >100){
+            this.val = text.value.trim();
+            this.val = this.val-0;
+            if (this.val <10 || this.val >100 || typeof this.val !== 'number'){
                 alert('输入不合法，重新写个~');
                 text.value = '';
                 return false;
             }else if (this.arr.length > 60){
                 alert('数组爆炸了!');
-                return false;
+                return false
             }
             return true;
         }
@@ -48,23 +51,38 @@
          * @returns {Array}
          */
         insertSort(){
-            var leg = this.arr.length;
-            for (let i=1; i<leg;i++){
-                let j=0;
-                function animation() {
-                    if (j<i){
-                        return this.arr;
-                    }
-                    if (this.arr[j]>=this.arr[i]){
-                        this.arr.splice(j,0,this.arr[i]);
-                        this.arr.splice(i+1,1);
-                        this.render()
-                    }
-                    j++;
-                    setTimeout(animation,30);
+            let leg = this.arr.length,
+                i = 1;
+            animation(this);
+            function animation(that) {
+                if (i>=leg){
+                    return that.arr;
                 }
+                for (let j=0; j<i; j++){
+                    if (that.arr[j]>=that.arr[i]){
+                        that.arr.splice(j,0,that.arr[i]);
+                        that.arr.splice(i+1,1);
+                        that.render();
+                    }
+                }
+                i++;
+                setTimeout(function () {
+                    animation(that);
+                },50);
             }
-            return this.arr;
+        }
+
+        /**
+         * 重绘
+         * @returns {boolean}
+         */
+        render(){
+            let str = '';
+            this.arr.forEach(function (e) {
+                str += '<li style="height: '+e+'px;" title="' + e + '"></li>';
+            });
+            this.list.innerHTML = str;
+            return true;
         }
 
         clear(){
@@ -81,7 +99,6 @@
             if (!this.regText()){
                 return false;
             }
-            console.log(1);
             this.arr.push(data);
             this.render();
             return data;
@@ -137,19 +154,6 @@
             },false)
         }
 
-        /**
-         * 重绘
-         * @returns {boolean}
-         */
-        render(){
-            let str = '';
-            this.arr.forEach(function (e) {
-                str += '<li style="height: '+e+'px;" title="' + e + '"></li>';
-            });
-            this.list.innerHTML = str;
-            return true;
-        }
-
         init(){
             this.rmEverything();
             this.render();
@@ -160,12 +164,13 @@
     myTeam.init();
     form.addEventListener('click',function (event) {
         var e = window.event || event;
+        myTeam.val = text.value;
         switch (e.target.value){
             case '左侧入':
-                myTeam.unshift(parseInt(text.value));
+                myTeam.unshift(myTeam.val);
                 break;
             case '右侧入':
-                myTeam.push(parseInt(text.value));
+                myTeam.push(parseInt(myTeam.val));
                 break;
             case '左侧出':
                 myTeam.shift();

@@ -20,6 +20,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.list = DOC.getElementById('list');
             this.arr = [];
+            this.val = null;
         }
 
         /**
@@ -31,7 +32,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _createClass(Team, [{
             key: 'regText',
             value: function regText() {
-                if (text.value < 10 || text.value > 100) {
+                this.val = text.value.trim();
+                this.val = this.val - 0;
+                if (this.val < 10 || this.val > 100 || typeof this.val !== 'number') {
                     alert('输入不合法，重新写个~');
                     text.value = '';
                     return false;
@@ -66,28 +69,41 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }, {
             key: 'insertSort',
             value: function insertSort() {
-                var leg = this.arr.length;
-
-                var _loop = function _loop(i) {
-                    var j = 0;
-                    function animation() {
-                        if (j < i) {
-                            return this.arr;
-                        }
-                        if (this.arr[j] >= this.arr[i]) {
-                            this.arr.splice(j, 0, this.arr[i]);
-                            this.arr.splice(i + 1, 1);
-                            this.render();
-                        }
-                        j++;
-                        setTimeout(animation, 30);
+                var leg = this.arr.length,
+                    i = 1;
+                animation(this);
+                function animation(that) {
+                    if (i >= leg) {
+                        return that.arr;
                     }
-                };
-
-                for (var i = 1; i < leg; i++) {
-                    _loop(i);
+                    for (var j = 0; j < i; j++) {
+                        if (that.arr[j] >= that.arr[i]) {
+                            that.arr.splice(j, 0, that.arr[i]);
+                            that.arr.splice(i + 1, 1);
+                            that.render();
+                        }
+                    }
+                    i++;
+                    setTimeout(function () {
+                        animation(that);
+                    }, 50);
                 }
-                return this.arr;
+            }
+
+            /**
+             * 重绘
+             * @returns {boolean}
+             */
+
+        }, {
+            key: 'render',
+            value: function render() {
+                var str = '';
+                this.arr.forEach(function (e) {
+                    str += '<li style="height: ' + e + 'px;" title="' + e + '"></li>';
+                });
+                this.list.innerHTML = str;
+                return true;
             }
         }, {
             key: 'clear',
@@ -108,7 +124,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 if (!this.regText()) {
                     return false;
                 }
-                console.log(1);
                 this.arr.push(data);
                 this.render();
                 return data;
@@ -177,22 +192,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     }
                 }, false);
             }
-
-            /**
-             * 重绘
-             * @returns {boolean}
-             */
-
-        }, {
-            key: 'render',
-            value: function render() {
-                var str = '';
-                this.arr.forEach(function (e) {
-                    str += '<li style="height: ' + e + 'px;" title="' + e + '"></li>';
-                });
-                this.list.innerHTML = str;
-                return true;
-            }
         }, {
             key: 'init',
             value: function init() {
@@ -208,12 +207,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     myTeam.init();
     form.addEventListener('click', function (event) {
         var e = window.event || event;
+        myTeam.val = text.value;
         switch (e.target.value) {
             case '左侧入':
-                myTeam.unshift(parseInt(text.value));
+                myTeam.unshift(myTeam.val);
                 break;
             case '右侧入':
-                myTeam.push(parseInt(text.value));
+                myTeam.push(parseInt(myTeam.val));
                 break;
             case '左侧出':
                 myTeam.shift();
