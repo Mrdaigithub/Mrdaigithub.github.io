@@ -13,7 +13,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (function (WIN, DOC) {
     var form = DOC.getElementById('form'),
-        text = DOC.getElementById('text');
+        text = DOC.getElementById('text'),
+        searchText = DOC.getElementById('searchText');
 
     var Team = function () {
         function Team() {
@@ -25,7 +26,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         /**
-         *
+         * 分割字符串
+         * @returns {string[]|*|Array}
          */
 
 
@@ -33,34 +35,84 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             key: 'getVal',
             value: function getVal() {
                 this.val = text.value.trim();
-                console.log(this.val);
-                this.arr = this.val.split(/,+|，+|`+|\s+/);
-                for (var i = 0; i < this.arr.length; i++) {
-                    if (this.arr[i] === '') {
-                        console.log(this.arr.length);
-                        this.arr.splice(i, 1, 0);
+                return this.val.split(/[,，、\s]+/);
+            }
+
+            /**
+             * 查找匹配的数据
+             * @returns {Array}
+             */
+
+        }, {
+            key: 'search',
+            value: function search() {
+                var reg = new RegExp(searchText.value),
+                    arr = [];
+                this.arr.forEach(function (e) {
+                    if (reg.test(e)) {
+                        arr.push(e);
                     }
+                });
+                return arr;
+            }
+
+            /**
+             * 重绘
+             * @returns {boolean}
+             */
+
+        }, {
+            key: 'render',
+            value: function render(mark) {
+                var _this = this;
+
+                var str = '';
+                this.arr.forEach(function (e) {
+                    str += '<li>' + e + '</li>';
+                });
+                this.list.innerHTML = str;
+                if (mark) {
+                    (function () {
+                        var childs = _this.list.children,
+                            cLeg = childs.length,
+                            searchArr = _this.search();
+
+                        var _loop = function _loop(i) {
+                            searchArr.forEach(function (e) {
+                                if (childs[i].innerHTML === e) {
+                                    childs[i].style.backgroundColor = '#ffc66d';
+                                }
+                            });
+                        };
+
+                        for (var i = 0; i < cLeg; i++) {
+                            _loop(i);
+                        }
+                    })();
                 }
-                return this.arr;
+                return true;
             }
 
             /**
               * 右侧入
-             * @param data
              * @returns {*}
              */
 
         }, {
             key: 'push',
-            value: function push(data) {
-                this.arr.push(data);
+            value: function push() {
+                var _this2 = this;
+
+                this.getVal().forEach(function (e) {
+                    _this2.arr.push(e);
+                });
                 this.render();
-                return data;
+                return this.arr;
             }
 
             /**
              * 右侧出
-             * @returns {T}
+             * @returns {*}
              */
 
         }, {
@@ -74,21 +126,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             /**
              * 左侧入
-             * @param data
              * @returns {*}
              */
 
         }, {
             key: 'unshift',
-            value: function unshift(data) {
-                this.arr.unshift(data);
+            value: function unshift() {
+                var _this3 = this;
+
+                this.getVal().forEach(function (e) {
+                    _this3.arr.unshift(e);
+                });
                 this.render();
-                return data;
+                return this.arr;
             }
 
             /**
              * 左侧出
-             * @returns {*|T}
+             * @returns {*}
              */
 
         }, {
@@ -102,32 +157,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }, {
             key: 'rmEverything',
             value: function rmEverything() {
-                var _this = this;
+                var _this4 = this;
 
                 this.list.addEventListener('click', function (event) {
                     var e = WIN.event || event;
                     if (e.target.nodeName === 'LI') {
                         var val = e.target.innerHTML;
-                        _this.list.removeChild(e.target);
+                        _this4.list.removeChild(e.target);
                         alert(val);
                     }
                 }, false);
-            }
-
-            /**
-             * 重绘
-             * @returns {boolean}
-             */
-
-        }, {
-            key: 'render',
-            value: function render() {
-                var str = '';
-                this.arr.forEach(function (e) {
-                    str += '<li>' + e + '</li>';
-                });
-                this.list.innerHTML = str;
-                return true;
             }
         }, {
             key: 'init',
@@ -143,7 +182,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var myTeam = new Team();
     myTeam.init();
     form.addEventListener('click', function (event) {
-        myTeam.getVal();
         var e = window.event || event;
         switch (e.target.value) {
             case '左侧入':
@@ -157,6 +195,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
             case '右侧出':
                 myTeam.pop();
+                break;
+            case 'search':
+                myTeam.search();
+                myTeam.render(true);
                 break;
         }
     }, false);
