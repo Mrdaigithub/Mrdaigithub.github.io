@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task20</title>
+    <style>
+        textarea,input{
+            vertical-align: middle;
+        }
+        ul{
+            list-style:none;
+        }
+        li{
+            display: inline-block;
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 25px;
+            background-color: #CC6666;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<form action="index.html" id="form">
+    <textarea id="text" cols="30" rows="1"></textarea>
+    <input type="button" value="左侧入">
+    <input type="button" value="右侧入">
+    <input type="button" value="左侧出">
+    <input type="button" value="右侧出">
+</form>
+<ul id="list"></ul>
+<script src="dist/index.js"></script>
+</body>
+</html>
