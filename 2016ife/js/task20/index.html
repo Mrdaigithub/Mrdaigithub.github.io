@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>task20</title>
     <style>
+        html,body{
+            background-color: #000;
+        }
         textarea,input{
             vertical-align: middle;
         }
@@ -15,20 +18,22 @@
             width: 50px;
             line-height: 50px;
             text-align: center;
-            border-radius: 25px;
             background-color: #CC6666;
             color: #fff;
             cursor: pointer;
+            margin: 5px;
         }
     </style>
 </head>
 <body>
 <form action="index.html" id="form">
-    <textarea id="text" cols="30" rows="1"></textarea>
+    <textarea id="text" cols="30" rows="3"></textarea>
     <input type="button" value="左侧入">
     <input type="button" value="右侧入">
     <input type="button" value="左侧出">
     <input type="button" value="右侧出">
+    <input type="text" placeholder="search" id="searchText">
+    <input type="button" value="search">
 </form>
 <ul id="list"></ul>
 <script src="dist/index.js"></script>

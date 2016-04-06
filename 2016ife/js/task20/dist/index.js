@@ -13,7 +13,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (function (WIN, DOC) {
     var form = DOC.getElementById('form'),
-        text = DOC.getElementById('text');
+        text = DOC.getElementById('text'),
+        searchText = DOC.getElementById('searchText');
 
     var Team = function () {
         function Team() {
@@ -21,46 +22,96 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.list = DOC.getElementById('list');
             this.arr = [];
-            this.val = '';
         }
 
         /**
-         *
+         * 分割字符串
+         * @returns {string[]|*|Array}
          */
 
 
         _createClass(Team, [{
             key: 'getVal',
             value: function getVal() {
-                this.val = text.value.trim();
-                console.log(this.val);
-                this.arr = this.val.split(/,+|，+|`+|\s+/);
-                for (var i = 0; i < this.arr.length; i++) {
-                    if (this.arr[i] === '') {
-                        this.arr.splice(i, 1, 0);
+                var val = text.value.trim();
+                return val.split(/[,，、\s]+/);
+            }
+
+            /**
+             * 查找匹配的数据
+             * @returns {Array}
+             */
+
+        }, {
+            key: 'search',
+            value: function search() {
+                var reg = new RegExp(searchText.value),
+                    arr = [];
+                this.arr.forEach(function (e) {
+                    if (reg.test(e)) {
+                        arr.push(e);
                     }
+                });
+                return arr;
+            }
+
+            /**
+             * 重绘
+             * @returns {boolean}
+             */
+
+        }, {
+            key: 'render',
+            value: function render(mark) {
+                var _this = this;
+
+                var str = '';
+                this.arr.forEach(function (e) {
+                    str += '<li>' + e + '</li>';
+                });
+                this.list.innerHTML = str;
+                if (mark) {
+                    (function () {
+                        var child = _this.list.children,
+                            cLeg = child.length,
+                            searchArr = _this.search();
+
+                        var _loop = function _loop(i) {
+                            searchArr.forEach(function (e) {
+                                if (child[i].innerHTML === e) {
+                                    child[i].style.backgroundColor = '#ffc66d';
+                                }
+                            });
+                        };
+
+                        for (var i = 0; i < cLeg; i++) {
+                            _loop(i);
+                        }
+                    })();
                 }
-                console.log(this.arr);
-                return this.arr;
+                return true;
             }
 
             /**
               * 右侧入
-             * @param data
              * @returns {*}
              */
 
         }, {
             key: 'push',
-            value: function push(data) {
-                this.arr.push(data);
+            value: function push() {
+                var _this2 = this;
+
+                this.getVal().forEach(function (e) {
+                    _this2.arr.push(e);
+                });
                 this.render();
-                return data;
+                return true;
             }
 
             /**
              * 右侧出
-             * @returns {T}
+             * @returns {*}
              */
 
         }, {
@@ -74,21 +125,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             /**
              * 左侧入
-             * @param data
              * @returns {*}
              */
 
         }, {
-            key: 'unshift',
-            value: function unshift(data) {
-                this.arr.unshift(data);
+            key: 'unShift',
+            value: function unShift() {
+                var _this3 = this;
+
+                this.getVal().forEach(function (e) {
+                    _this3.arr.unshift(e);
+                });
                 this.render();
-                return data;
+                return true;
             }
 
             /**
              * 左侧出
-             * @returns {*|T}
+             * @returns {*}
              */
 
         }, {
@@ -102,32 +156,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }, {
             key: 'rmEverything',
             value: function rmEverything() {
-                var _this = this;
+                var _this4 = this;
 
                 this.list.addEventListener('click', function (event) {
                     var e = WIN.event || event;
                     if (e.target.nodeName === 'LI') {
                         var val = e.target.innerHTML;
-                        _this.list.removeChild(e.target);
+                        _this4.list.removeChild(e.target);
                         alert(val);
                     }
                 }, false);
-            }
-
-            /**
-             * 重绘
-             * @returns {boolean}
-             */
-
-        }, {
-            key: 'render',
-            value: function render() {
-                var str = '';
-                this.arr.forEach(function (e) {
-                    str += '<li>' + e + '</li>';
-                });
-                this.list.innerHTML = str;
-                return true;
             }
         }, {
             key: 'init',
@@ -146,16 +184,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var e = window.event || event;
         switch (e.target.value) {
             case '左侧入':
-                myTeam.unshift(parseInt(text.value));
+                myTeam.unShift();
                 break;
             case '右侧入':
-                myTeam.push(parseInt(text.value));
+                myTeam.push();
                 break;
             case '左侧出':
                 myTeam.shift();
                 break;
             case '右侧出':
                 myTeam.pop();
+                break;
+            case 'search':
+                myTeam.search();
+                myTeam.render(true);
                 break;
         }
     }, false);

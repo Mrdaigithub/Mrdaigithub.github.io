@@ -7,7 +7,8 @@
 
 (function (WIN, DOC) {
     let form = DOC.getElementById('form'),
-        text = DOC.getElementById('text');
+        text = DOC.getElementById('text'),
+        searchText = DOC.getElementById('searchText');
 
 
     class Team{
@@ -15,39 +16,73 @@
         constructor(){
             this.list = DOC.getElementById('list');
             this.arr = [];
-            this.val = '';
         }
 
         /**
-         *
+         * 分割字符串
+         * @returns {string[]|*|Array}
          */
         getVal(){
-            this.val = text.value.trim();
-            console.log(this.val);
-            this.arr = this.val.split(/,+|，+|`+|\s+/);
-            for (let i=0; i<this.arr.length; i++){
-                if (this.arr[i] === ''){
-                    this.arr.splice(i,1,0);
+            let val = text.value.trim();
+            return val.split(/[,，、\s]+/);
+        }
+
+        /**
+         * 查找匹配的数据
+         * @returns {Array}
+         */
+        search(){
+            let reg = new RegExp(searchText.value),
+                arr = [];
+            this.arr.forEach((e)=>{
+                if (reg.test(e)){
+                    arr.push(e);
+                }
+            });
+            return arr;
+        }
+
+        /**
+         * 重绘
+         * @returns {boolean}
+         */
+        render(mark){
+            let str = '';
+            this.arr.forEach((e)=>{
+                str += '<li>'+e+'</li>';
+            });
+            this.list.innerHTML = str;
+            if (mark){
+                let child = this.list.children,
+                    cLeg = child.length,
+                    searchArr = this.search();
+                for (let i=0;i<cLeg;i++){
+                    searchArr.forEach((e)=>{
+                        if (child[i].innerHTML === e){
+                            child[i].style.backgroundColor = '#ffc66d';
+                        }
+                    })
                 }
             }
-            console.log(this.arr);
-            return this.arr;
+            return true;
         }
+
 
         /**
           * 右侧入
-         * @param data
          * @returns {*}
          */
-        push(data){
-            this.arr.push(data);
+        push(){
+            this.getVal().forEach((e)=>{
+                this.arr.push(e);
+            });
             this.render();
-            return data;
+            return true;
         }
 
         /**
          * 右侧出
-         * @returns {T}
+         * @returns {*}
          */
         pop(){
             let val = this.arr.pop();
@@ -58,18 +93,19 @@
 
         /**
          * 左侧入
-         * @param data
          * @returns {*}
          */
-        unshift(data){
-            this.arr.unshift(data);
+        unShift(){
+            this.getVal().forEach((e)=>{
+                this.arr.unshift(e);
+            });
             this.render();
-            return data;
+            return true;
         }
 
         /**
          * 左侧出
-         * @returns {*|T}
+         * @returns {*}
          */
         shift(){
             let val = this.arr.shift();
@@ -89,19 +125,6 @@
             },false)
         }
 
-        /**
-         * 重绘
-         * @returns {boolean}
-         */
-        render(){
-            let str = '';
-            this.arr.forEach(function (e) {
-                str += '<li>'+e+'</li>';
-            });
-            this.list.innerHTML = str;
-            return true;
-        }
-
         init(){
             this.rmEverything();
             this.render();
@@ -111,19 +134,23 @@
     var myTeam = new Team();
     myTeam.init();
     form.addEventListener('click',function (event) {
-        var e = window.event || event;
+        let e = window.event || event;
         switch (e.target.value){
             case '左侧入':
-                myTeam.unshift(parseInt(text.value));
+                myTeam.unShift();
                 break;
             case '右侧入':
-                myTeam.push(parseInt(text.value));
+                myTeam.push();
                 break;
             case '左侧出':
                 myTeam.shift();
                 break;
             case '右侧出':
                 myTeam.pop();
+                break;
+            case 'search':
+                myTeam.search();
+                myTeam.render(true);
                 break;
         }
     },false)
