@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task21</title>
+    <style>
+        #tag:focus{
+            border:2px solid #85B8F8;
+        }
+        textarea:focus{
+            border:1px solid #85B8F8;
+        }
+        ul{
+            list-style:none;
+        }
+        li{
+            background-color: #86CCFD;
+            display: inline-block;
+            padding: 5px 10px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 35px;
+            cursor: pointer;
+        }
+        .tagList li{
+            background-color: #86CCFD;
+        }
+        .remove::before{
+            content: '删除';
+        }
+        .tagList li:hover{
+            background-color: #F08080;
+        }
+        .favoriteList li{
+            background-color: #FAC694;
+        }
+    </style>
+</head>
+<body>
+<div class="form">
+    <label for="tag">Tag:</label>
+    <input type="text" id="tag" placeholder="input tag">
+    <ul class="tagList"></ul>
+
+    <textarea class="favoriteText" cols="30" rows="10"></textarea><br>
+    <input type="submit" value="请确认兴趣爱好" class="favoriteBtn">
+    <ul class="favoriteList"></ul>
+</div>
+<script src="dist/index.js"></script>
+</body>
+</html>

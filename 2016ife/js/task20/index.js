@@ -115,6 +115,9 @@
             return val;
         }
 
+        /**
+         * 点击删除
+         */
         rmEverything(){
             this.list.addEventListener('click',(event)=>{
                 let e = WIN.event || event;
@@ -126,6 +129,9 @@
             },false)
         }
 
+        /**
+         * 初始化
+         */
         init(){
             this.rmEverything();
             this.render();
