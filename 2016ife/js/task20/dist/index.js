@@ -37,10 +37,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 this.arr = this.val.split(/,+|，+|`+|\s+/);
                 for (var i = 0; i < this.arr.length; i++) {
                     if (this.arr[i] === '') {
-                        console.log(this.arr.length);
                         this.arr.splice(i, 1, 0);
                     }
                 }
+                console.log(this.arr);
                 return this.arr;
             }
 
@@ -143,7 +143,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var myTeam = new Team();
     myTeam.init();
     form.addEventListener('click', function (event) {
-        myTeam.getVal();
         var e = window.event || event;
         switch (e.target.value) {
             case '左侧入':
