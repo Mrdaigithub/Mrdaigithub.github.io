@@ -22,7 +22,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.list = DOC.getElementById('list');
             this.arr = [];
-            this.val = '';
         }
 
         /**
@@ -34,8 +33,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _createClass(Team, [{
             key: 'getVal',
             value: function getVal() {
-                this.val = text.value.trim();
-                return this.val.split(/[,，、\s]+/);
+                var val = text.value.trim();
+                return val.split(/[,，、\s]+/);
             }
 
             /**
@@ -73,14 +72,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 this.list.innerHTML = str;
                 if (mark) {
                     (function () {
-                        var childs = _this.list.children,
-                            cLeg = childs.length,
+                        var child = _this.list.children,
+                            cLeg = child.length,
                             searchArr = _this.search();
 
                         var _loop = function _loop(i) {
                             searchArr.forEach(function (e) {
-                                if (childs[i].innerHTML === e) {
-                                    childs[i].style.backgroundColor = '#ffc66d';
+                                if (child[i].innerHTML === e) {
+                                    child[i].style.backgroundColor = '#ffc66d';
                                 }
                             });
                         };
@@ -107,7 +106,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     _this2.arr.push(e);
                 });
                 this.render();
-                return this.arr;
+                return true;
             }
 
             /**
@@ -130,15 +129,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
              */
 
         }, {
-            key: 'unshift',
-            value: function unshift() {
+            key: 'unShift',
+            value: function unShift() {
                 var _this3 = this;
 
                 this.getVal().forEach(function (e) {
                     _this3.arr.unshift(e);
                 });
                 this.render();
-                return this.arr;
+                return true;
             }
 
             /**
@@ -185,10 +184,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var e = window.event || event;
         switch (e.target.value) {
             case '左侧入':
-                myTeam.unshift(parseInt(text.value));
+                myTeam.unShift();
                 break;
             case '右侧入':
-                myTeam.push(parseInt(text.value));
+                myTeam.push();
                 break;
             case '左侧出':
                 myTeam.shift();
