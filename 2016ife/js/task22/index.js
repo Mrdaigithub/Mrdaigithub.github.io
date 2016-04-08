@@ -1,74 +1,87 @@
 (function (WIN, DOC) {
 
-    /**
-     * 要插入二叉树的节点类
-     */
-    class Node{
-        constructor(data,left,right){
-            this.data = data;
-            this.left = left;
-            this.right = right;
-        }
-        showData(){
-            return this.data;
-        }
-    }
-
-
+    let treeList = DOC.querySelector('.tree'),
+        btnBox = DOC.querySelector('.btnBox');
     /**
      * 二叉树类
      */
     class BST{
         constructor(){
-            this.root = null;
+            this.arr = [];
         }
-        insert(data){
-            let n = new Node(data,null,null);
 
-            if (!this.root){
-                //如果是空的二叉树
-                this.root = n;
-            }else{
-                //如果不是空的二叉树
-                let current = this.root,
-                    parents = null;
-
-                while (true){
-                    if (data < current.data){
-                        //append leftChild
-                        current.left = current;
-                        if (!current){
-                            parents.left = n;
-                            console.log(parents);
-                            break;
-                        }
-                    }else{
-                        //append leftChild
-                        current.right = current;
-                        if (!current){
-                            parents.right = n;
-                            console.log(parents);
-                            break;
-                        }
-                    }
-                }
+        /**
+         * 前序
+         * @param node
+         */
+        preOrder(node){
+            if (node){
+                this.arr.push(node);
+                this.preOrder(node.firstElementChild);
+                this.preOrder(node.lastElementChild);
             }
         }
-        preOrder(){
 
+        /**
+         * 中序
+         * @param node
+         */
+        inOrder(node){
+            if (node){
+                this.inOrder(node.firstElementChild);
+                this.arr.push(node);
+                this.inOrder(node.lastElementChild);
+            }
         }
-        inOrder(){
 
+        /**
+         * 后序
+         * @param node
+         */
+        posOrder(node){
+            if (node){
+                this.posOrder(node.firstElementChild);
+                this.posOrder(node.lastElementChild);
+                this.arr.push(node);
+            }
         }
-        posOrder(){
 
-        }
-        render(){
-
+        /**
+         * 重绘
+         * @param i
+         */
+        render(i=0){
+            let that = this;
+            this.arr[i].style.backgroundColor = '#FF0000';
+            setTimeout(function () {
+                that.arr[i].style.backgroundColor = '';
+                if (i >= that.arr.length-1){
+                    that.arr = [];
+                    return true;
+                }
+                that.render(++i);
+            },500)
         }
     }
 
     let a = new BST();
-    a.insert(5);
-    a.insert(3);
+
+    btnBox.addEventListener('click',(event)=>{
+        let e = WIN.event || event;
+
+        switch (e.target.innerHTML){
+            case 'preOrder':
+                a.preOrder(treeList);
+                a.render();
+                break;
+            case 'inOrder':
+                a.inOrder(treeList);
+                a.render();
+                break;
+            case 'posOrder':
+                a.posOrder(treeList);
+                a.render();
+                break;
+        }
+    },false);
 })(window,document);
