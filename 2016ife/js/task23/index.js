@@ -1,7 +1,8 @@
 (function (WIN, DOC) {
     "use strict";
     let treeList = DOC.querySelector('.tree'),
-        form = DOC.querySelector('.form');
+        form = DOC.querySelector('.form'),
+        text = DOC.querySelector('#text');
 
     /**
      * 对象转数组
@@ -19,6 +20,8 @@
     class Tree{
         constructor(){
             this.stack = [];
+            this.arr = [];
+            this.animationStatus = false;
         }
 
         /**
@@ -26,43 +29,57 @@
          * @param treeNode
          * @returns {boolean}
          */
-        traversal(treeNode){
+        traversal(treeNode,flag){
             if (!treeNode || !treeNode.children.length){
                 return this.animation();
             }else{
                 this.stack = toArray(treeNode.children);
-
                 let item;
                 while (this.stack.length){
                     item = this.stack.shift();
+                    this.arr.push(item);
                     if (item.children && item.children.length){
-                        this.stack = toArray(item.children).concat(this.stack);
+                        if (flag){
+                            // 深度遍历
+                            this.stack = toArray(item.children).concat(this.stack);
+                        }else{
+                            // 广度遍历
+                            this.stack = this.stack.concat(toArray(item.children));
+                        }
                     }
                 }
-                console.log(this.stack);
-
             }
+            this.stack = [];
+            return this.animation();
         }
 
-        find(treeNode,i=0){
-            console.log(treeNode.children[i]);
-            let val = treeNode.children[i].innerText.replace(/(\s.*)+/,'');
-
-            if (val === DOC.querySelector('#text').value){
-                //找到值了
-                this.arr.push(treeNode.children[i]);
-                console.log(this.arr);
-                return true;
-                // return this.animation();
-            }else if(!treeNode || !treeNode.children.length){
-                //没找到值
-                return true;
-                // return this.animation();
+        /**
+         * 搜索
+         * @param treeNode
+         * @param i
+         * @returns {boolean}
+         */
+        find(treeNode,val,i=0){
+            if (!treeNode || !treeNode.children.length){
+                return this.animation();
             }else{
-                for (let i=0;i<treeNode.children.length;i++){
-                    this.arr.push(treeNode.children[i],i);
-                    this.find(treeNode.children[i],i+1);
+                this.stack = toArray(treeNode.children);
+                let item;
+                while(this.stack.length){
+                    item = this.stack.shift();
+                    this.arr.push(item);
+                    console.log(item.innerText.replace(/(\s.*)+/,''));
+                    if (item.innerText.replace(/(\s.*)+/,'') === val){
+                        break;
+                    }else{
+                        if (item.children && item.children.length){
+                            //深度遍历
+                            this.stack = toArray(item.children).concat(this.stack);
+                        }
+                    }
                 }
+                this.stack = [];
+                return this.animation();
             }
         }
 
@@ -72,7 +89,8 @@
         animation(){
             let i=0,
                 that = this;
-            console.log(this.arr);
+            this.animationStatus = true;
+
             function start(node) {
                 node.style.backgroundColor = '#CC0000';
                 setTimeout(function () {
@@ -82,6 +100,7 @@
                         start(that.arr[i]);
                     }else{
                         that.arr = [];
+                        that.animationStatus = false;
                     }
                 },300)
             }
@@ -96,11 +115,29 @@
     form.addEventListener('click',(event)=>{
         let e = WIN.event || event;
         switch (e.target.value){
-            case '遍历':
-                aTree.traversal(treeList);
+            case '深度遍历':
+                if (aTree.animationStatus){
+                    alert('动画还没跑完~');
+                }else{
+                    aTree.traversal(treeList,true);
+                }
                 break;
+
+            case '广度遍历':
+                if(aTree.animationStatus){
+                    alert('动画还没跑完~');
+                }else{
+                    aTree.traversal(treeList,false);
+                }
+                break;
+
             case '查找':
-                aTree.find(treeList);
+                if (aTree.animationStatus){
+                    alert('动画还没跑完~');
+                }else{
+                    aTree.find(treeList,text.value);
+                }
+                break;
         }
     },false)
 })(window,document);
