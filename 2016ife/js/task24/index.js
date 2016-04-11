@@ -105,11 +105,13 @@
 
         /**
          * 删除选中的节点及其子元素
-         * @returns {*}
+         * @returns {boolean}
          */
         removeNode(){
             if (this.current){
-                return this.current.parentNode.removeChild(this.current);
+                this.current.parentNode.removeChild(this.current);
+                this.current = null;
+                return true;
             }else{
                 alert('选择要删除的节点');
                 return false;
