@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task24</title>
+    <style>
+        div{
+            cursor: default;
+        }
+        .tree div{
+            padding:10px 16px;
+            display: inline-block;
+            border:1px solid #000;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="tree">
+    <div>
+        super
+        <div>
+            this
+            <div>apple</div>
+            <div>phone</div>
+            <div>
+                shit
+                <div>book</div>
+                <div>school</div>
+            </div>
+        </div>
+        <div>
+            note
+            <div>
+                human
+                <div>code</div>
+                <div>operate</div>
+                <div>man</div>
+            </div>
+            <div>
+                program
+                <div>
+                    bement
+                    <div>cat</div>
+                </div>
+                <div>class</div>
+            </div>
+        </div>
+        <div>fish</div>
+    </div>
+</div>
+<div class="form">
+    <input type="submit" value="深度遍历"><br>
+    <input type="submit" value="广度遍历"><br>
+    <input type="text" placeholder="输入要查找的值" id="text">
+    <input type="submit" value="search" id="find"><label for="find">(默认深度遍历)</label><br>
+    <input type="submit" value="删除选中的节点及其子元素"><br>
+    <input type="text" placeholder="输入要添加的值" id="insertVal"><input type="submit" value="insert">
+</div>
+<script src="dist/index.js"></script>
+</body>
+</html>
