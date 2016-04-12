@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>task25</title>
+    <style>
+        body{
+            color: #444;
+            font-size: 16px;
+        }
+        ul{
+            padding-left: 1em;
+            line-height: 1.5em;
+            list-style-type: dot;
+        }
+        .box{
+            max-width: 30%;
+            box-sizing: border-box;
+            padding:10px;
+            margin: auto;
+            border:1px solid #000;
+            font-family: Menlo, Consolas, monospace;
+            background-color: #F3F5F6;
+        }
+        .box li{
+            font-weight: 300;
+            cursor: pointer;
+        }
+        .bold{
+            margin: 0;
+            font-weight: bold;
+        }
+        .icon::before{
+            content: '[';
+        }
+        .icon::after{
+            content: ']';
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>
+            <div class="bold">
+                phone
+                <span class="icon">+</span>
+            </div>
+        </li>
+    </ul>
+</div>
+<script src="dist/index.js"></script>
+</body>
+</html>
