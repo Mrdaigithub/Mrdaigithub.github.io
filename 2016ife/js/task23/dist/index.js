@@ -36,7 +36,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /**
          * 遍历
          * @param treeNode
-         * @returns {boolean}
+         * @param flag
+         * @returns {*}
          */
 
 
@@ -69,15 +70,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /**
              * 搜索
              * @param treeNode
-             * @param i
-             * @returns {boolean}
+             * @param val
+             * @returns {*}
              */
 
         }, {
             key: 'find',
             value: function find(treeNode, val) {
-                var i = arguments.length <= 2 || arguments[2] === undefined ? 0 : arguments[2];
-
                 if (!treeNode || !treeNode.children.length) {
                     return this.animation();
                 } else {
@@ -133,6 +132,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                                     // 没找到
                                     alert('没找到');
                                 }
+                                that.arr = [];
                             } else {
                                 // 在搜索模式
                                 that.arr = [];

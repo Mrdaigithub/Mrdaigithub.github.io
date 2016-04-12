@@ -111,6 +111,7 @@
                                 // 没找到
                                 alert('没找到');
                             }
+                            that.arr = [];
                         }else{
                             // 在搜索模式
                             that.arr = [];
