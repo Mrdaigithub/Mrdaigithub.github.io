@@ -2,7 +2,8 @@
     "use strict";
     let treeList = DOC.querySelector('.tree'),
         form = DOC.querySelector('.form'),
-        text = DOC.querySelector('#text');
+        text = DOC.querySelector('#text'),
+        insertVal = DOC.querySelector('#insertVal');
 
     /**
      * 对象转数组
@@ -22,6 +23,7 @@
             this.stack = [];
             this.arr = [];
             this.animationStatus = false;
+            this.current = null;
         }
 
         /**
@@ -86,6 +88,51 @@
         }
 
         /**
+         * 选中节点
+         * @param treeNode
+         */
+        checkedNode(treeNode){
+            treeNode.addEventListener('click',(event)=>{
+                let e = WIN.event || event;
+                if (this.current){
+                    //清除上次选中的node
+                    this.current.style.backgroundColor = '';
+                }
+                this.current = e.target;
+                this.current.style.backgroundColor = '#FF9999';
+            },false)
+        }
+
+        /**
+         * 删除选中的节点及其子元素
+         * @returns {boolean}
+         */
+        removeNode(){
+            if (this.current){
+                this.current.parentNode.removeChild(this.current);
+                this.current = null;
+                return true;
+            }else{
+                alert('选择要删除的节点');
+                return false;
+            }
+        }
+
+        insertNode(insertVal){
+            if (this.current){
+                if (insertVal){
+                    this.current.innerHTML += '<div>' + insertVal + '</div>';
+                }else{
+                    alert('写点什么吧~');
+                    return false;
+                }
+            }else{
+                alert('选择要插入的节点');
+                return false;
+            }
+        }
+
+        /**
          * 动画
          */
         animation(findMode,result=true){
@@ -122,11 +169,20 @@
             }
             start(this.arr[i]);
         }
+
+        /**
+         * 初始化
+         * @param treeNode
+         */
+        init(treeNode){
+            this.checkedNode(treeNode)
+        }
     }
 
 
 
     let aTree = new Tree();
+    aTree.init(treeList);
 
     form.addEventListener('click',(event)=>{
         let e = WIN.event || event;
@@ -147,12 +203,21 @@
                 }
                 break;
 
-            case '查找':
+            case 'search':
                 if (aTree.animationStatus){
                     alert('动画还没跑完~');
                 }else{
                     aTree.find(treeList,text.value);
                 }
+                break;
+
+            case '删除选中的节点及其子元素':
+                aTree.removeNode();
+                break;
+
+            case 'insert':
+                aTree.insertNode(insertVal.value);
+                insertVal.value = '';
                 break;
         }
     },false)

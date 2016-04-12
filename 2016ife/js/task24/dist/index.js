@@ -9,7 +9,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var treeList = DOC.querySelector('.tree'),
         form = DOC.querySelector('.form'),
-        text = DOC.querySelector('#text');
+        text = DOC.querySelector('#text'),
+        insertVal = DOC.querySelector('#insertVal');
 
     /**
      * 对象转数组
@@ -31,12 +32,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.stack = [];
             this.arr = [];
             this.animationStatus = false;
+            this.current = null;
         }
 
         /**
          * 遍历
          * @param treeNode
-         * @returns {boolean}
+         * @param flag
+         * @returns {*}
          */
 
 
@@ -69,15 +72,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /**
              * 搜索
              * @param treeNode
-             * @param i
-             * @returns {boolean}
+             * @param val
+             * @returns {*}
              */
 
         }, {
             key: 'find',
             value: function find(treeNode, val) {
-                var i = arguments.length <= 2 || arguments[2] === undefined ? 0 : arguments[2];
-
                 if (!treeNode || !treeNode.children.length) {
                     return this.animation();
                 } else {
@@ -99,6 +100,60 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     }
                     // 没找到
                     return this.animation(true, false);
+                }
+            }
+
+            /**
+             * 选中节点
+             * @param treeNode
+             */
+
+        }, {
+            key: 'checkedNode',
+            value: function checkedNode(treeNode) {
+                var _this = this;
+
+                treeNode.addEventListener('click', function (event) {
+                    var e = WIN.event || event;
+                    if (_this.current) {
+                        //清除上次选中的node
+                        _this.current.style.backgroundColor = '';
+                    }
+                    _this.current = e.target;
+                    _this.current.style.backgroundColor = '#FF9999';
+                }, false);
+            }
+
+            /**
+             * 删除选中的节点及其子元素
+             * @returns {boolean}
+             */
+
+        }, {
+            key: 'removeNode',
+            value: function removeNode() {
+                if (this.current) {
+                    this.current.parentNode.removeChild(this.current);
+                    this.current = null;
+                    return true;
+                } else {
+                    alert('选择要删除的节点');
+                    return false;
+                }
+            }
+        }, {
+            key: 'insertNode',
+            value: function insertNode(insertVal) {
+                if (this.current) {
+                    if (insertVal) {
+                        this.current.innerHTML += '<div>' + insertVal + '</div>';
+                    } else {
+                        alert('写点什么吧~');
+                        return false;
+                    }
+                } else {
+                    alert('选择要插入的节点');
+                    return false;
                 }
             }
 
@@ -144,12 +199,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 }
                 start(this.arr[i]);
             }
+
+            /**
+             * 初始化
+             * @param treeNode
+             */
+
+        }, {
+            key: 'init',
+            value: function init(treeNode) {
+                this.checkedNode(treeNode);
+            }
         }]);
 
         return Tree;
     }();
 
     var aTree = new Tree();
+    aTree.init(treeList);
 
     form.addEventListener('click', function (event) {
         var e = WIN.event || event;
@@ -170,12 +237,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 }
                 break;
 
-            case '查找':
+            case 'search':
                 if (aTree.animationStatus) {
                     alert('动画还没跑完~');
                 } else {
                     aTree.find(treeList, text.value);
                 }
+                break;
+
+            case '删除选中的节点及其子元素':
+                aTree.removeNode();
+                break;
+
+            case 'insert':
+                aTree.insertNode(insertVal.value);
+                insertVal.value = '';
                 break;
         }
     }, false);
