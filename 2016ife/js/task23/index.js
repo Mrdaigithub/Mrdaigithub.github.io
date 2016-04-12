@@ -27,7 +27,8 @@
         /**
          * 遍历
          * @param treeNode
-         * @returns {boolean}
+         * @param flag
+         * @returns {*}
          */
         traversal(treeNode,flag){
             if (!treeNode || !treeNode.children.length){
@@ -56,10 +57,10 @@
         /**
          * 搜索
          * @param treeNode
-         * @param i
-         * @returns {boolean}
+         * @param val
+         * @returns {*}
          */
-        find(treeNode,val,i=0){
+        find(treeNode,val){
             if (!treeNode || !treeNode.children.length){
                 return this.animation();
             }else{
