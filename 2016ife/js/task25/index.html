@@ -8,13 +8,23 @@
             color: #444;
             font-size: 16px;
         }
+        button{
+            border: none;
+            background: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding:5px 10px;;
+        }
         ul{
             padding-left: 1em;
             line-height: 1.5em;
             list-style-type: dot;
         }
         .box{
-            max-width: 30%;
+            max-width: 50%;
             box-sizing: border-box;
             padding:10px;
             margin: auto;
@@ -36,19 +46,109 @@
         .icon::after{
             content: ']';
         }
+        .hide{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+        .lineShow{
+            display: inline-block;
+        }
+        .operate{
+            display: inline-block;
+            margin: 0 10px;
+            opacity: 0;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+        }
+        .operate:hover{
+            opacity: 1;
+        }
+        .operate>.add-btn{
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #4cae4c;
+        }
+        .operate>.rm-btn{
+            color: #fff;
+            background-color: #d9534f;
+            border-color: #d43f3a;
+        }
     </style>
 </head>
 <body>
 <div class="box">
     <ul>
         <li>
-            <div class="bold">
-                phone
-                <span class="icon">+</span>
+            <div class="bold">Program
+                <span class="icon" id="lineShow"> - </span>
+                <div class="operate">
+                    <button class="add-btn">Add</button>
+                    <button class="rm-btn">Remove</button>
+                </div>
             </div>
+            <ul>
+                <li>
+                    <div>C
+                        <span class="icon hide"> - </span>
+                        <div class="operate">
+                            <button class="add-btn">Add</button>
+                            <button class="rm-btn">Remove</button>
+                        </div>
+                    </div>
+                    <ul></ul>
+                </li>
+                <li>
+                    <div>Java
+                        <span class="icon hide"> - </span>
+                        <div class="operate">
+                            <button class="add-btn">Add</button>
+                            <button class="rm-btn">Remove</button>
+                        </div>
+                    </div>
+                    <ul></ul>
+                </li>
+                <li>
+                    <div>Node
+                        <span class="icon hide"> - </span>
+                        <div class="operate">
+                            <button class="add-btn">Add</button>
+                            <button class="rm-btn">Remove</button>
+                        </div>
+                    </div>
+                    <ul></ul>
+                </li>
+                <li>
+                    <div>Javascript
+                        <span class="icon hide"> - </span>
+                        <div class="operate">
+                            <button class="add-btn">Add</button>
+                            <button class="rm-btn">Remove</button>
+                        </div>
+                    </div>
+                    <ul></ul>
+                </li>
+                <li>
+                    <div>Python
+                        <span class="icon hide"> - </span>
+                        <div class="operate">
+                            <button class="add-btn">Add</button>
+                            <button class="rm-btn">Remove</button>
+                        </div>
+                    </div>
+                    <ul></ul>
+                </li>
+            </ul>
         </li>
     </ul>
 </div>
+
+<input type="text" placeholder="输入要搜索的值">
+<input type="submit" value="搜索" id="searchBtn">
 <script src="dist/index.js"></script>
 </body>
 </html>
