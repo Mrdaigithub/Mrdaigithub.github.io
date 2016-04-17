@@ -16,9 +16,7 @@
                 if (e.target.className === 'add-btn'){
                     let addVal = prompt('你想加点什么？');
                     e.target.parentNode.parentNode.className = 'bold';
-                    console.log(e.target.parentNode.parentNode.getElementsByTagName('span'));
                     e.target.parentNode.parentNode.getElementsByTagName('span')[0].className = 'icon lineShow';
-                    console.log(e.target.parentNode.parentNode);
                     e.target.parentNode.parentNode.nextElementSibling.innerHTML += '<li><div>' + addVal + this.icon + this.operate + '</div><ul></ul></li>';
                 }
             },false)
@@ -94,7 +92,6 @@
             }
         }else if(e.target.nodeName === 'SPAN'){
             let list = e.target.parentNode.nextElementSibling;
-            console.log(list);
             if (list.className === 'hide'){
                 list.className = 'show';
                 e.target.innerHTML = ' - ';

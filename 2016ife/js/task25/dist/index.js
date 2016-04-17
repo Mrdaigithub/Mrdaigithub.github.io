@@ -30,9 +30,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     if (e.target.className === 'add-btn') {
                         var addVal = prompt('你想加点什么？');
                         e.target.parentNode.parentNode.className = 'bold';
-                        console.log(e.target.parentNode.parentNode.getElementsByTagName('span'));
                         e.target.parentNode.parentNode.getElementsByTagName('span')[0].className = 'icon lineShow';
-                        console.log(e.target.parentNode.parentNode);
                         e.target.parentNode.parentNode.nextElementSibling.innerHTML += '<li><div>' + addVal + _this.icon + _this.operate + '</div><ul></ul></li>';
                     }
                 }, false);
@@ -124,7 +122,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
         } else if (e.target.nodeName === 'SPAN') {
             var _list = e.target.parentNode.nextElementSibling;
-            console.log(_list);
             if (_list.className === 'hide') {
                 _list.className = 'show';
                 e.target.innerHTML = ' - ';
