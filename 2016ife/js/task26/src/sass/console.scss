@@ -1,16 +1,52 @@
- *{
-   margin: 0;
-   body{
-     background: #000;
-   }
-   h1{
-     color: #f00;
-     position: absolute;
-     transition: 2s;
-     &:hover{
-       transform: rotate(3600deg);
-       transform: translate(100px,100px);
-
-     }
-   }
- }
+#console{
+  width: 25%;
+  border-right: 1px solid #222;
+  position: absolute;
+  top:0;
+  bottom:0;
+  #log{
+    header{
+      text-align: center;
+      font-size: 2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #222;
+    }
+    #logMain{
+      height: (400rem/12);
+      box-sizing: border-box;
+      overflow: auto;
+      padding:0 1rem;
+      li{
+        line-height: 1rem;
+        margin: 0.8rem 0;
+      }
+    }
+  }
+  #controlBar{
+    width: 100%;
+    border-top: 1px solid #222;
+    box-sizing: border-box;
+    padding:1rem 0.5rem;
+    #list{
+      margin-bottom: 1rem;
+      li{
+        margin: .3rem 0;
+        span{
+          font-size: 14px;
+        }
+        button{
+          margin: 0 .3rem;
+        }
+      }
+    }
+    button{
+      border:1px solid #000;
+      color: #999;
+      padding:0.3rem .8rem;
+      border-radius: 0.5rem;
+      &:hover{
+        color: #222;
+      }
+    }
+  }
+}

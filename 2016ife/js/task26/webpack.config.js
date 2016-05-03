@@ -27,8 +27,5 @@ module.exports = {
                 loader: 'css-loader!autoprefixer-loader?browsers=last 2 versions'
             }
         ]
-    },
-    postcss: function () {
-        return [precss, autoprefixer];
     }
 };

@@ -1,16 +1,19 @@
- *{
-   margin: 0;
-   body{
-     background: #000;
-   }
-   h1{
-     color: #f00;
-     position: absolute;
-     transition: 2s;
-     &:hover{
-       transform: rotate(3600deg);
-       transform: translate(100px,100px);
-
-     }
-   }
- }
+*{
+  margin:0;
+  padding:0;
+}
+html,body{
+  font-size: 12px;
+  font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+ul{
+  list-style:none;
+}
+button{
+  background: none;
+  outline:none;
+  border:none;
+  cursor: pointer;
+}
