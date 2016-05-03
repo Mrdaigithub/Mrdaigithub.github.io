@@ -1,6 +1,7 @@
 // include
 
 // js
+import {Spaceship} from './spaceship.js'
 
 // css
 import '../sass/reset.scss';
@@ -8,15 +9,18 @@ import '../sass/golbal.scss';
 import '../sass/console.scss';
 import '../sass/canvas.scss';
 
-
+let a = new Spaceship();
 
 ((WIN,DOC)=>{
     // canvas
+
     let canvas = $('canvas')[0],
-        main = $('main'),
-        ctx = canvas.getContext('2d');
+        main = $('main');
+
     canvas.width = parseInt(main.css('width')) - parseInt($('#console').css('width'));
     canvas.height = parseInt(main.css('height'));
+    let ctx = canvas.getContext('2d');
+
     ctx.fillStyle = '#333';
     ctx.fillRect(0,0,canvas.width,canvas.height);
 
@@ -53,7 +57,14 @@ import '../sass/canvas.scss';
         ctx.arc(m.x,m.y,280,0,2*Math.PI);
         ctx.stroke();
     })();
-
     
+    // 绘制飞船
+    (()=>{
+        $('button').on('click',()=>{
+            console.log($(this));
+        })
+    })();
+
+
 
 })(window,document);
