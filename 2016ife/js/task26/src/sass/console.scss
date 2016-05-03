@@ -1,0 +1,16 @@
+ *{
+   margin: 0;
+   body{
+     background: #000;
+   }
+   h1{
+     color: #f00;
+     position: absolute;
+     transition: 2s;
+     &:hover{
+       transform: rotate(3600deg);
+       transform: translate(100px,100px);
+
+     }
+   }
+ }
