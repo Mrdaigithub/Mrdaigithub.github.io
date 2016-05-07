@@ -7,12 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weui/0.4.2/style/weui.min.css">
 </head>
 <body>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 <script>
-    if (navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(function (pos) {
-            console.log(pos);
-        })
-    }
+    document.write(returnCitySN["cip"]+','+returnCitySN["cname"])
 </script>
 </body>
 </html>
