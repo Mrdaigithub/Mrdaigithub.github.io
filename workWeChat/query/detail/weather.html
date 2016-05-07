@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>queryWeather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weui/0.4.2/style/weui.min.css">
+</head>
+<body>
+<script>
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function (pos) {
+            console.log(pos);
+        })
+    }
+</script>
+</body>
+</html>
