@@ -28,7 +28,7 @@ import '../../node_modules/zepto/zepto.min.js';
          */
         getWeatherData(callback){
 
-            $.getJSON('../../index.php?city=' + this.city,(data)=>{
+            $.getJSON('http://139.129.21.118/celecare/index.php?city=' + this.city,(data)=>{
                 if (callback){
                     hideLoad($('.weui_toast')[0]);
                     console.log(1);
