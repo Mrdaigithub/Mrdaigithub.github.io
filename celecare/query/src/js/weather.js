@@ -31,7 +31,6 @@ import '../../node_modules/zepto/zepto.min.js';
             $.getJSON('http://139.129.21.118/celecare/index.php?city=' + this.city,(data)=>{
                 if (callback){
                     hideLoad($('.weui_toast')[0]);
-                    console.log(1);
                     callback(data['HeWeather data service 3.0'][0]);
                 }
             });
