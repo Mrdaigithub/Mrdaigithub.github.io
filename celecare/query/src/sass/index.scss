@@ -1,0 +1,45 @@
+html,body{
+  font:1rem/1.5 'Microsoft YaHei', 'Droid Sans Fallback', SimHei, Arial, Helvetica, tahoma, sans-serif;
+  color: #333;
+  background-color: #f5f5d5;
+  padding:0.3rem;
+}
+header{
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: #fff;
+  h1{
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 44px;
+  }
+}
+main{
+  padding: 64px 5px 0 5px;
+  .my-btn{
+    padding: 5px;
+    font-size: 17px;
+    text-align: left;
+    text-indent: 1rem;
+    &::before{
+      content: '';
+      width: 15px;
+      height:15px;
+      border-top: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      position: absolute;
+      top:50%;
+      right:20px;
+      margin-top: -7px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
