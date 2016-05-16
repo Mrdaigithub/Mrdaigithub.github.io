@@ -1,0 +1,108 @@
+//reset
+
+*{
+  margin: 0;
+  padding:0;
+}
+ul{
+  list-style: none;
+}
+
+
+//main
+
+html,body{
+  font:16px/1.5 'Microsoft YaHei', 'Droid Sans Fallback', SimHei, Arial, Helvetica, tahoma, sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+}
+body > header{
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  border-bottom: 1px solid #e6e6e6;
+  position: relative;
+  h1{
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 3rem;
+  }
+  .backBtn{
+    width: .7rem;
+    height:.7rem;
+    border-top: 3px solid #808080;
+    border-right: 3px solid #808080;
+    position: absolute;
+    left:1rem;
+    top:1.1rem;
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+    transform: rotate(225deg);
+  }
+}
+.weui_cells{
+  margin-top: .5rem;
+  .weui_cell_hd{
+    width: 5rem;
+  }
+}
+.button_sp_area{
+  margin: .5rem 3rem;
+  a{
+    font-size: 1rem;
+    line-height: 2rem;
+    background-color: #fff;
+  }
+}
+main{
+  border-top: 1px solid #e6e6e6;
+  background-color: #fff;
+  header{
+    text-align: left;
+    padding:1rem .8rem;
+    h2{
+      font-size: 1rem;
+    }
+    small{
+      color: #ccc;
+    }
+  }
+  .succ{
+    margin:0 1rem;
+    & > p{
+      padding:.6rem;
+      color: #a0a0a0;
+      border-top: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    ul{
+      margin-left: 1.2rem;
+      padding:.7rem 0;
+      li{
+        color: #a0a0a0;
+        padding:.6rem 0;
+        border-bottom:1px solid #e0e0e0;
+        font-size: .9rem;
+        time{
+          font-size: .6rem;
+        }
+      }
+    }
+  }
+  .err{
+    box-sizing: border-box;
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 4rem;
+    color: #d9534f;
+    i{
+      margin:0 .3rem;
+    }
+  }
+}
+#checked{
+  color: #0b0;
+}

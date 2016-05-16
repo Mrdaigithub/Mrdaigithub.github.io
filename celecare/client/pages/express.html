@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zn-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weui/0.4.2/style/weui.min.css">
+    <title>快递查询</title>
+</head>
+<body>
+<header>
+    <h1>快递查询</h1>
+    <a href="index.html" class="backBtn"></a>
+</header>
+<div class="weui_cells">
+
+    <div class="weui_cell weui_cell_select weui_select_before">
+        <div class="weui_cell_hd">
+            <select class="weui_select" name="select2">
+                <option value="1">顺丰</option>
+                <option value="3">韵达</option>
+                <option value="4">圆通</option>
+                <option value="4">申通</option>
+                <option value="4">中通</option>
+                <option value="4">天天</option>
+                <option value="4">汇通</option>
+                <option value="4">全峰</option>
+                <option value="4">德邦</option>
+            </select>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="number" placeholder="请输入运单号">
+        </div>
+    </div>
+</div>
+<div class="button_sp_area">
+    <a href="javascript:;" class="weui_btn weui_btn_plain_default">查询</a>
+</div>
+<main style="display: none">
+    <div class="succ" style="display: none">
+        <header>
+            <h2></h2>
+            <small>运单编号：<span></span></small><br>
+        </header>
+        <div>
+            <p>物流跟踪</p>
+            <ul>
+                <li id="checked">
+                    <p>[温州文成] 派件已 签收 ,签收人是拍照签收签收网点是温州文成</p>
+                    <time>2016-04-21 17:30:22</time>
+                </li>
+                <li>
+                    <p>[温州文成] 派件已 签收 ,签收人是拍照签收签收网点是温州文成</p>
+                    <time>2016-04-21 17:30:22</time>
+                </li>
+                <li>
+                    <p>[温州文成] 派件已 签收 ,签收人是拍照签收签收网点是温州文成</p>
+                    <time>2016-04-21 17:30:22</time>
+                </li>
+                <li>
+                    <p>[温州文成] 派件已 签收 ,签收人是拍照签收签收网点是温州文成</p>
+                    <time>2016-04-21 17:30:22</time>
+                </li>
+                <li>
+                    <p>[温州文成] 派件已 签收 ,签收人是拍照签收签收网点是温州文成</p>
+                    <time>2016-04-21 17:30:22</time>
+                </li>
+                <li>
+                    <p>[温州文成] 派件已 签收 ,签收人是拍照签收签收网点是温州文成</p>
+                    <time>2016-04-21 17:30:22</time>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="err" style="display: none"></div>
+</main>
+<div class="weui_dialog_alert" id="dialog2" style="display: none;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>
+        <div class="weui_dialog_bd">请重新验证快递单号</div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+        </div>
+    </div>
+</div>
+<script src="../dist/express.js"></script>
+</body>
+</html>
