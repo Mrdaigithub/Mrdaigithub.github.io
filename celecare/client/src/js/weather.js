@@ -9,6 +9,7 @@ import '../../node_modules/zepto/zepto.min.js';
             this.weatherDes = {
                 晴:'&#xe6f5;',
                 多云:'&#xe6f3;',
+                晴间多云:'&#xe6f3;',
                 阴:'&#xe6f8;',
                 小雨:'&#xe6f7;',
                 中雨:'&#xe6fd;',
@@ -30,8 +31,8 @@ import '../../node_modules/zepto/zepto.min.js';
          * 得到天气JSON数据,将数据放到this.data
          */
         getWeatherData(callback){
-            console.log(1);
             $.getJSON('http://139.129.21.118/celecare/server/weather.php?city=' + this.city,(data)=>{
+                console.log(data);
                 if (callback){
                     hideLoad($('.weui_toast')[0]);
                     callback(data['HeWeather data service 3.0'][0]);
